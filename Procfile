@@ -1,1 +1,1 @@
-web: gunicorn automate.wsgi 
+web: gunicorn automate.wsgi
