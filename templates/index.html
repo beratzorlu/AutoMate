@@ -19,7 +19,7 @@
                     <img src="https://res.cloudinary.com/dqontmjhf/image/upload/v1682341482/auto-mate-logo_fygxyz.png"
                         class="img-fluid" />
                     {% else %}
-                    <img src="{{ post.featured_image.url }}" class="img-fluid" />
+                    <img src="{{ post.featured_image.url }}" class="img-fluid"/>
                     {% endif %}
                     <div class="card-body">
                         <div class="card-title">
@@ -42,7 +42,8 @@
                             <p class="card-text text-muted h6"><i class="far fa-heart"></i>
                                 {{ post.likes_numbers }}</p>
                         </div>
-                        <a href="#" class="btn btn-dark rounded-0 float-end">Read More</a>
+                        <a href="{% url 'post_detail' post.slug %}" class="btn btn-dark rounded-0 float-end">Read
+                            More</a>
                     </div>
                 </div>
             </div>

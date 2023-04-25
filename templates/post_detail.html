@@ -1,0 +1,40 @@
+{% extends 'base.html' %} {% block content %}
+
+<!-- blog title card -->
+<div class="container">
+  <div class="jumbotron p-3 p-md-5 text-white bg-dark m-3">
+    {% if "placeholder" in post.featured_image.url %}
+    <img src="https://res.cloudinary.com/dqontmjhf/image/upload/v1682368800/default-banner_idmpyd.png"
+      class="img-fluid img-thumbnail" width="100%" alt="placeholder image">
+    {% else %}
+    <img src="{{ post.featured_image.url }}" class="img-fluid img-thumbnail" />
+    {% endif %}
+    <div class="col-md-6 px-0 mt-3">
+      <h1 class="display-4 font-italic">{{ post.title }}</h1>
+      <p class="lead my-3">{{ post.excerpt }}</p>
+      <p class="lead mb-3">Created by <a href="#"
+          class="link-danger link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover">{{ post.author }}</a>
+      </p>
+      <p class="lead fst-italic"><small>Posted: {{ post.created_on }} | Updated: {{ post.updated_on }}</small></a></p>
+      <p class="card-text default-card-text h6"><i class="far fa-heart"></i> {{ post.likes_numbers }}</p>
+    </div>
+  </div>
+</div>
+<!-- main content -->
+<main role="main" class="container">
+  <div class="row">
+    <div class="col-md-8 blog-main">
+      <hr>
+      <div class="blog-post">
+        <h2 class="blog-post-title">{{ post.title }}</h2>
+        <p class="blog-post-meta">{{ post.created_on }} by <strong class="default-card-text">{{ post.author }}</strong></p>
+        <p class="card-text">{{ post.content | safe }}</p>
+      </div>
+    </div>
+    <!-- sidebar -->
+    {% block sidebar%}
+    {% include 'sidebar.html' %}
+    {% endblock sidebar%}
+</main>
+
+{% endblock %}

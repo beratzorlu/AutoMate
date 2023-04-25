@@ -2,6 +2,10 @@
 
 /* GLOBAL SETTINGS */
 
+:root {
+    --main-orange: #ff1616;
+}
+
 html, body {
     height: 100%;
     max-width: 100%;
@@ -11,6 +15,10 @@ html, body {
 
 hr {
     color: brown;
+}
+
+.default-card-text {
+    color: var(--main-orange);
 }
 
 .fs-small {
@@ -26,4 +34,3 @@ hr {
 .banner-image {
     height: 50px;
 }
-  
