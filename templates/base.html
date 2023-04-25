@@ -46,7 +46,8 @@
     <!-- Navigation -->
     <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="https://res.cloudinary.com/dqontmjhf/image/upload/v1682341482/auto-mate-logo_fygxyz.png"
+            <a class="navbar-brand" href="#"><img
+                    src="https://res.cloudinary.com/dqontmjhf/image/upload/v1682341482/auto-mate-logo_fygxyz.png"
                     alt="Logo of a car with signals coming out from top." width="100" height="100"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -72,28 +73,33 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link">Contact Us</a>
+                        <a class="btn btn-danger rounded-0" href="#" role="button">Consultation</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Cars</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
                 </ul>
-                <form class="d-flex" role="search">
-                    <button class="btn btn-outline-danger m-1" type="submit">Sign Up</button>
-                    <button class="btn btn-outline-danger m-1" type="submit">Login</button>
+                <form class="d-flex" role="link">
+                    <button class="btn btn-outline-danger m-1 rounded-0" type="submit">Sign Up</button>
+                    <button class="btn btn-outline-dark m-1 rounded-0" type="submit">Login</button>
                 </form>
             </div>
         </div>
     </nav>
 
     <!-- Content Block -->
-    {% block content %}
-    {% endblock content %}
+    <main>
+        {% block content %}
+        {% endblock content %}
+    </main>
+ 
 
-    <footer class="text-center p-1 fs-small">
+    <footer class="text-center p-1 fs-small d-flex flex-column mt-auto page-footer">
         <hr>
         <!-- Copyright Information-->
-        <div class="text-center p-1">
-            Developed By <a href="https://github.com/beratzorlu" class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" target="_blank" rel="nofollow">Berat Zorlu</a> for
-            Code Institute's Portfolio Project 4 - 2023
+        <div class="text-center footer-copyright p-1">
+            © 2023 Copyright: Developed By <a href="https://github.com/beratzorlu"
+                class="link-danger link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+                target="_blank" rel="nofollow">Berat Zorlu</a> for
+            Code Institute's Portfolio Project 4
         </div>
         <div class="container">
             <!-- Social Media Links -->

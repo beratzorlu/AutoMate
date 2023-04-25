@@ -1,1 +1,58 @@
 {% extends "base.html" %}
+
+{% block content %}
+
+<!-- carousel -->
+
+<!-- featured posts -->
+<div class="text-center m-3">
+    <h1 class="display-6">~Featured Blogs~</h1>
+</div>
+<div class="bg-light">
+    <div class="container">
+        <div class="row">
+            {% for post in post_list %}
+            {% if post.likes_numbers >= 0 %}
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card mb-5 shadow-sm">
+                    {% if "placeholder" in post.featured_image.url %}
+                    <img src="https://res.cloudinary.com/dqontmjhf/image/upload/v1682341482/auto-mate-logo_fygxyz.png"
+                        class="img-fluid" />
+                    {% else %}
+                    <img src="{{ post.featured_image.url }}" class="img-fluid" />
+                    {% endif %}
+                    <div class="card-body">
+                        <div class="card-title">
+                            <h2>{{ post.title }}</h2>
+                        </div>
+                        <div class="card-text">
+                            <p>{{ post.excerpt }}</p>
+                        </div>
+                        <div class="card-text">
+                            <small>
+                                <p>Author: <strong>{{ post.author }}</strong></p>
+                            </small>
+                        </div>
+                        <div class="card-text">
+                            <small>
+                                <p class="fst-italic text-muted"> Last updated on {{ post.created_on }}</p>
+                            </small>
+                        </div>
+                        <div>
+                            <p class="card-text text-muted h6"><i class="far fa-heart"></i>
+                                {{ post.likes_numbers }}</p>
+                        </div>
+                        <a href="#" class="btn btn-dark rounded-0 float-end">Read More</a>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+<!-- pagination -->
+
+{% endblock %}

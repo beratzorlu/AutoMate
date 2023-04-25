@@ -20,4 +20,10 @@ hr {
 .selector-for-some-widget {
     box-sizing: content-box;
   }
+
+/* CARDS */
+
+.banner-image {
+    height: 50px;
+}
   
