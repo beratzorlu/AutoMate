@@ -78,8 +78,13 @@
                     <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
                 </ul>
                 <form class="d-flex" role="link">
-                    <button class="btn btn-outline-danger m-1 rounded-0" type="submit">Sign Up</button>
-                    <button class="btn btn-outline-dark m-1 rounded-0" type="submit">Login</button>
+                    {% if user.is_authenticated %}
+                    <a class="btn btn-outline-danger m-1 rounded-0" href="{% url 'account_logout' %}">Logout</a>
+                    <a class="btn btn-dark m-1 rounded-0" href="#">My Profile</a>
+                    {% else %}
+                    <a class="btn btn-outline-danger m-1 rounded-0" href="{% url 'account_signup' %}">Sign Up</a>
+                    <a class="btn btn-outline-dark m-1 rounded-0" href="{% url 'account_login' %}">Login</a>
+                    {% endif %}
                 </form>
             </div>
         </div>
