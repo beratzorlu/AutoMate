@@ -12,11 +12,18 @@
     <div class="col-md-6 px-0 mt-3">
       <h1 class="display-4 font-italic">{{ post.title }}</h1>
       <p class="lead my-3">{{ post.excerpt }}</p>
-      <p class="lead mb-3">Created by <a href="#"
-          class="link-danger link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover">{{ post.author }}</a>
-      </p>
+      <p class="lead mb-3">Created by <a href="#" class="link-danger link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover">{{ post.author }}</a></p>
       <p class="lead fst-italic"><small>Posted: {{ post.created_on }} | Updated: {{ post.updated_on }}</small></a></p>
-      <p class="card-text default-card-text h6"><i class="far fa-heart"></i> {{ post.likes_numbers }}</p>
+      <div class="row">
+        <div class="col-1">
+          <p class="card-text default-card-text h6 me-3"><i class="far fa-heart"></i> {{ post.likes_numbers }}</p>
+        </div>
+        <div class="col-1">
+          {% with comments.count as total_comments %}
+          <p class="card-text default-card-text h6 text-inline"><i class="far fa-comments"></i> {{ total_comments }}</p>
+          {% endwith %}
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -27,7 +34,8 @@
       <hr>
       <div class="blog-post">
         <h2 class="blog-post-title">{{ post.title }}</h2>
-        <p class="blog-post-meta">{{ post.created_on }} by <strong class="default-card-text">{{ post.author }}</strong></p>
+        <p class="blog-post-meta">{{ post.created_on }} by <strong class="default-card-text">{{ post.author }}</strong>
+        </p>
         <p class="card-text">{{ post.content | safe }}</p>
       </div>
     </div>
