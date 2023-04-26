@@ -1,0 +1,37 @@
+{% block comments %}
+{% load crispy_forms_tags %}
+
+<hr>
+
+{% if commented %}
+
+<div class="alert alert-success d-flex align-items-center" role="alert">
+    <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+    <div>
+        Success! Your comment has been submitted and waiting admin approval.
+    </div>
+</div>  
+
+{% else %}
+
+
+{% if user.is_authenticated %}
+
+<h4>Leave a comment:</h4>
+<p>Logged in as: <strong class="default-card-text">{{ user.username }}</strong></p>
+<form method="post" style="margin-top: 1.3em;">
+    {% csrf_token %}
+    {{ user_comment_form | crispy }}
+    <!-- <div class="form-outline">
+        <textarea class="form-control border border-dark-subtle" rows="4"
+            placeholder="Write your content here..."></textarea>
+    </div> -->
+    <button class="btn btn-dark rounded-0 m-3 border border-danger border-start-0 float-end" type="submit">Submit Comment</button>
+</form>
+
+{% endif %}
+{% endif %}
+
+<hr>
+
+{% endblock comments %}
