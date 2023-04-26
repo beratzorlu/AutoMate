@@ -2,15 +2,33 @@
 {% load crispy_forms_tags %}
 
 <hr>
+<div>
+    <h4 class="mb-3">Comments...</h4>
+    {% for comment in comments %}
+    <div class="card m-1 mb-3 border border-dark-subtle">
+        <div class="card-body">
+            <p class="fs-6">Posted by <a href="#"
+                class="link-danger link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover">{{ comment.name }}</a>
+            on <span class="fst-italic">{{ comment.created_on }}</span></p>
+            <p class="card-text">{{ comment.body }}</p>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+
+
+<hr>
 
 {% if commented %}
 
 <div class="alert alert-success d-flex align-items-center" role="alert">
-    <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+    <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Success:">
+        <use xlink:href="#check-circle-fill" /></svg>
     <div>
         Success! Your comment has been submitted and waiting admin approval.
     </div>
-</div>  
+</div>
 
 {% else %}
 
@@ -22,16 +40,16 @@
 <form method="post" style="margin-top: 1.3em;">
     {% csrf_token %}
     {{ user_comment_form | crispy }}
-    <!-- <div class="form-outline">
-        <textarea class="form-control border border-dark-subtle" rows="4"
-            placeholder="Write your content here..."></textarea>
-    </div> -->
-    <button class="btn btn-dark rounded-0 m-3 border border-danger border-start-0 float-end" type="submit">Submit Comment</button>
+    <button class="btn btn-dark rounded-0 m-3 border border-danger border-start-0 float-end" type="submit">Submit
+        Comment</button>
 </form>
 
-{% endif %}
-{% endif %}
+{% else %}
 
-<hr>
+<h4 class="fst-italic">Please <a href="{% url 'account_login' %}"
+        class="link-danger link-underline-opacity-0 link-underline-opacity-100-hover">login</a> to leave a comment.</h4>
+
+{% endif %}
+{% endif %}
 
 {% endblock comments %}
