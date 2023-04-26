@@ -15,10 +15,8 @@
           class="img-fluid" alt="Sample image">
       </div>
       <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1 border-danger">
-        <h1 class="display-3 text-center fst-italic">{% trans "Connect With Automates" %}</h1>
+        <h1 class="display-6 text-center fst-italic">{% trans "Connect With Your Automates" %}</h1>
         <form class="login" method="POST" action="{% url 'account_login' %}">
-          <h5 class="card-text">{% blocktrans %}If you're new here, then please
-            <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</h5>
           {% csrf_token %}
           {{ form.as_p }}
           {% if redirect_field_value %}
@@ -32,8 +30,8 @@
               href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a></p>
           <div class="text-center text-lg-start mt-4 pt-2">
             <button class="btn btn-lg btn-dark rounded-0 mb-1" type="submit">{% trans "Login" %}</button>
-            <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="{% url 'account_signup' %}"
-                class="link-danger link-underline-opacity-0 link-underline-opacity-100-hover">Sign Up</a>
+            <p class="small fw-bold mt-2 pt-1 mb-0">{% blocktrans %}If you're new here, {% endblocktrans %}<a href="{% url 'account_signup' %}"
+                class="link-danger link-underline-opacity-0 link-underline-opacity-100-hover">please create an account.</a>
             </p>
           </div>
 
