@@ -4,15 +4,30 @@
 <hr>
 <div>
     <h4 class="mb-3">Comments...</h4>
+    
     {% for comment in comments %}
     <div class="card m-1 mb-3 border border-dark-subtle">
         <div class="card-body">
+
+            {% if comment.name.is_staff %}
+
+            <p class="fs-6">Posted by <a href="#"
+                    class="link-danger link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover">{{ comment.name }}<i class="fas fa-crown"></i></a>
+                on <span class="fst-italic">{{ comment.created_on }}</span></p>
+
+            {% else %}
+
             <p class="fs-6">Posted by <a href="#"
                 class="link-danger link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover">{{ comment.name }}</a>
             on <span class="fst-italic">{{ comment.created_on }}</span></p>
+
             <p class="card-text">{{ comment.body }}</p>
+
+            {% endif %}
+
         </div>
     </div>
+
     {% endfor %}
 
 </div>
