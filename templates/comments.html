@@ -4,8 +4,11 @@
 <hr>
 <div>
     <h4 class="mb-3">Comments...</h4>
+
     {% if comments %}
+
     {% for comment in comments %}
+    
     <div class="card m-1 mb-3 border border-dark-subtle">
         <div class="card-body">
 
@@ -27,6 +30,9 @@
 
             {% endif %}
 
+        </div>
+    </div>
+
     {% endfor %}
 
     {% else %}
@@ -35,8 +41,6 @@
 
     {% endif %}
 
-        </div>
-    </div>
 </div>
 <hr>
 
