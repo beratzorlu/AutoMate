@@ -1,0 +1,12 @@
+{% block messages %}
+
+<div class="row">
+  {% for message in messages %}
+  <div class="alert {{ message.tags }} alert-dismissable fade show" id="message" role="alert">
+    {{ message|safe }}
+    <button type="button" class="btn-close float-end" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock messages %}

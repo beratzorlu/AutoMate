@@ -99,6 +99,13 @@
         </div>
     </nav>
 
+    <!-- Django messages -->
+    <div class="container">
+        {% block messages %}
+        {% include "messages.html" %}
+        {% endblock messages %}
+    </div>
+
     <!-- Content Block -->
     <main class="flex-shrink-0 main-bg">
         {% block content %}
@@ -123,6 +130,7 @@
             </div>
         </div>
     </footer>
+    <script src="{% static 'fade.js' %}"></script>
 </body>
 
 </html>

@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.http import HttpResponseRedirect
+from django.contrib import messages
 from .models import Post
 from django.views import generic, View
 from .forms import UserCommentForm
@@ -55,6 +56,7 @@ class DetailView(View):
             comment = user_comment_form.save(commit=False)
             comment.post = post
             comment.save()
+            messages.success(request, "Success! Your comment has been submitted and waiting admin approval.")
         else:
             user_comment_form = UserCommentForm()
 
