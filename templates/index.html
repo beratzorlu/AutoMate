@@ -12,7 +12,7 @@
     <div class="container">
         <div class="row">
             {% for post in post_list %}
-            {% if post.likes_numbers >= 0 %}
+            {% if post.likes_numbers > 1 %}
             <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="card mb-5 shadow-sm">
                     {% if "placeholder" in post.featured_image.url %}
@@ -39,7 +39,7 @@
                             </small>
                         </div>
                         <div>
-                            <p class="card-text text-muted h6"><i class="far fa-heart"></i>
+                            <p class="card-text text-muted h6 fst-italic"><i class="far fa-heart text-danger"></i>
                                 {{ post.likes_numbers }}</p>
                         </div>
                         <a href="{% url 'post_detail' post.slug %}" class="btn btn-dark rounded-0 float-end">Read
