@@ -16,16 +16,45 @@
       <p class="lead fst-italic"><small>Posted: {{ post.created_on }} | Updated: {{ post.updated_on }}</small></a></p>
       <div class="row">
         <div class="col-1">
+          {% if is_liked %}
+          <p class="card-text default-card-text h6 me-3"><i class="fas fa-heart"></i> {{ post.likes_numbers }}</p>
+          {% else %}
           <p class="card-text default-card-text h6 me-3"><i class="far fa-heart"></i> {{ post.likes_numbers }}</p>
+          {% endif %}
         </div>
         <div class="col-1">
           {% with comments.count as total_comments %}
-          <p class="card-text default-card-text h6 text-inline"><i class="far fa-comments"></i> {{ total_comments }}</p>
+          <p class="card-text default-card-text h6 text-inline text-white"><i class="far fa-comments"></i>  {{ total_comments }}</p>
           {% endwith %}
         </div>
+
       </div>
     </div>
   </div>
+  
+    {% if user.is_authenticated %}
+
+    <div class="float-center">
+      <form action="{% url 'url_post_like' post.slug %}" method="POST">
+
+      {% csrf_token %}
+
+      {% if is_liked %}
+
+      <button type="submit" class="btn btn-danger rounded-0 mt-1 mb-1 me-2" name="blogpost_id" value="{{post.slug}}">Like</button>
+
+      {% else %}
+
+      <button class="btn btn-outline-danger rounded-0 mt-1 mb-1 me-2">Like</button>
+
+      {% endif %}
+
+      <a href="#comment-button" class="btn btn-outline-dark rounded-0">Comment</a>
+      </form>
+    </div>
+
+    {% endif %}
+
 </div>
 <!-- main content -->
 <main role="main" class="container">

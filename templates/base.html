@@ -60,14 +60,15 @@
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Finance</a>
+                        <a class="nav-link active" href="#">Blog</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             Buyer's Guide
                         </a>
                         <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Understanding Financing</a></li>
                             <li><a class="dropdown-item" href="#">Buying Your First Car?</a></li>
                             <li><a class="dropdown-item" href="#">Understanding Second Hand Cars</a></li>
                         </ul>
@@ -75,7 +76,7 @@
                     <li class="nav-item">
                         <a class="btn btn-danger rounded-0" href="#" role="button">Consultation</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="#">Contact Us</a></li>
                 </ul>
                 <form class="d-flex" role="link">
                     {% if user.is_authenticated %}

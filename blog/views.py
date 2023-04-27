@@ -1,4 +1,5 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse
+from django.http import HttpResponseRedirect
 from .models import Post
 from django.views import generic, View
 from .forms import UserCommentForm
@@ -6,7 +7,7 @@ from .forms import UserCommentForm
 
 class PostList(generic.ListView):
     """
-    Class-based view of the Post model
+    Class-based list view of the Post model
     """
     model = Post
     queryset = Post.objects.filter(status=1).order_by('-created_on')
@@ -68,3 +69,19 @@ class DetailView(View):
                 "user_comment_form": UserCommentForm()
             },
         )
+
+
+class UserPostLike(View):
+    """
+    Class-based view for user likes on blog posts
+    """
+
+    def post(self, request, slug):
+        post = get_object_or_404(Post, slug=slug)
+
+        if post.likes.filter(id=request.user.id).exists():
+            post.likes.remove(request.user)
+        else:
+            post.likes.add(request.user)
+
+        return HttpResponseRedirect(reverse('post_detail', args=[slug]))
