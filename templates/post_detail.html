@@ -38,6 +38,18 @@
   {% if user.is_authenticated %}
 
   <div class="float-center">
+
+    {% if user.id == post.author.id %}
+
+    <button class="btn btn-outline-dark border border-danger m-1 rounded-0 float-end" data-bs-toggle="modal"
+      data-bs-target="#staticBackdrop"><strong class="text-danger">Delete Blog</strong></button>
+
+    <!-- delete post modal -->
+    {% block delete_post %}
+    {% include 'delete_post.html' %}
+    {% endblock delete_post %}
+    {% endif %}
+
     <form action="{% url 'url_post_like' post.slug %}" method="POST">
 
       {% csrf_token %}
@@ -55,18 +67,6 @@
 
       <a href="#comment-button" class="btn btn-outline-dark rounded-0">Comment</a>
     </form>
-
-    {% if user.id == post.author.id %}
-
-    <button class="btn btn-outline-danger rounded-0" data-bs-toggle="modal"
-    data-bs-target="#staticBackdrop"><strong class="text-black">Delete Blog</strong></button>
-
-    <!-- delete post modal -->
-    {% block delete_post %}
-    {% include 'delete_post.html' %}
-    {% endblock delete_post %}
-    {% endif %}
- 
   </div>
 
   {% endif %}
