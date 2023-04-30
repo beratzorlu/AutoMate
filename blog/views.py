@@ -4,6 +4,7 @@ from django.contrib import messages
 from .models import Post
 from django.views import generic, View
 from .forms import UserCommentForm
+from django.urls import reverse_lazy
 
 
 class PostList(generic.ListView):
@@ -87,3 +88,12 @@ class UserPostLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+
+class UserPostDelete(generic.DeleteView):
+    """
+    Class-based view for deleting blog posts
+    """
+    model = Post
+    template_name = 'delete_post.html'
+    success_url = reverse_lazy('home')

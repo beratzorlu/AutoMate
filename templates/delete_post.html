@@ -1,0 +1,32 @@
+{% block delete_post %}
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Delete Post By <span
+                        class="text-danger">{{ post.author }}</span></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h4>
+                    Are you sure you want to <strong class="text-italic text-danger">delete</strong> your blog post?
+                    </h3>
+                    <p class="fst-italic">
+                        Warning: Once deleted, you <strong class="text-danger">cannot</strong> retrieve your content.
+                    </p>
+            </div>
+            <div class="modal-footer">
+                <form action="{% url 'url_post_delete' post.slug %}" method="POST">
+                    {% csrf_token %}
+                    <button type="button" class="btn btn-outline-dark rounded-0" data-bs-dismiss="modal">No, go
+                        back!</button>
+                    <button type="submit" class="btn btn-outline-danger rounded-0">Yes, delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock delete_post %}

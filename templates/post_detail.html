@@ -12,7 +12,9 @@
     <div class="col-md-6 px-0 mt-3">
       <h1 class="display-4 font-italic">{{ post.title }}</h1>
       <p class="lead my-3">{{ post.excerpt }}</p>
-      <p class="lead mb-3">Created by <a href="#" class="link-danger link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover">{{ post.author }}</a></p>
+      <p class="lead mb-3">Created by <a href="#"
+          class="link-danger link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover">{{ post.author }}</a>
+      </p>
       <p class="lead fst-italic"><small>Posted: {{ post.created_on }} | Updated: {{ post.updated_on }}</small></a></p>
       <div class="row">
         <div class="col-1">
@@ -24,24 +26,26 @@
         </div>
         <div class="col-1">
           {% with comments.count as total_comments %}
-          <p class="card-text default-card-text h6 text-inline text-white"><i class="far fa-comments"></i>{{ total_comments }}</p>
+          <p class="card-text default-card-text h6 text-inline text-white"><i
+              class="far fa-comments"></i>{{ total_comments }}</p>
           {% endwith %}
         </div>
 
       </div>
     </div>
   </div>
-  
-    {% if user.is_authenticated %}
 
-    <div class="float-center">
-      <form action="{% url 'url_post_like' post.slug %}" method="POST">
+  {% if user.is_authenticated %}
+
+  <div class="float-center">
+    <form action="{% url 'url_post_like' post.slug %}" method="POST">
 
       {% csrf_token %}
 
       {% if is_liked %}
 
-      <button type="submit" class="btn btn-danger rounded-0 mt-1 mb-1 me-2" name="blogpost_id" value="{{post.slug}}">Like</button>
+      <button type="submit" class="btn btn-danger rounded-0 mt-1 mb-1 me-2" name="blogpost_id"
+        value="{{post.slug}}">Like</button>
 
       {% else %}
 
@@ -50,10 +54,22 @@
       {% endif %}
 
       <a href="#comment-button" class="btn btn-outline-dark rounded-0">Comment</a>
-      </form>
-    </div>
+    </form>
 
+    {% if user.id == post.author.id %}
+
+    <button class="btn btn-outline-danger rounded-0" data-bs-toggle="modal"
+    data-bs-target="#staticBackdrop"><strong class="text-black">Delete Blog</strong></button>
+
+    <!-- delete post modal -->
+    {% block delete_post %}
+    {% include 'delete_post.html' %}
+    {% endblock delete_post %}
     {% endif %}
+ 
+  </div>
+
+  {% endif %}
 
 </div>
 <!-- main content -->
