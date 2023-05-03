@@ -9,12 +9,22 @@ from django.urls import reverse_lazy
 
 class PostList(generic.ListView):
     """
-    Class-based list view of the Post model
+    Class-based list view of the PostList model
     """
     model = Post
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'index.html'
     paginate_by = 6
+
+
+class BlogList(generic.ListView):
+    """
+    Class-based list view of the BlogList model.
+    """
+    model = Post
+    queryset = Post.objects.filter(status=1).order_by('-created_on')
+    template_name = 'blog_list.html'
+    paginate_by = 8
 
 
 class DetailView(View):
