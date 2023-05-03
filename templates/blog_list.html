@@ -2,5 +2,17 @@
 {% block content %}
 
 
+<div class="card mt-3 ms-3 me-3 rounded-0">
+    {% if user.is_authenticated %}
+    <div class="card-header">
+        <h5 class="card-title pt-2">Welcome, <strong class="text-danger">{{ user.username }}</strong>!</h5>
+    </div>
+    <div class="card-body">
+        <p class="card-text pt-1">Here, you will find all blog posts published by other users.</p>
+        <a href="#" class="btn btn-danger border border-dark float-end rounded-0">Add Blog Post</a>
+    </div>
+    {% endif %}
+</div>
+
 
 {% endblock %}
