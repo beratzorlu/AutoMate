@@ -97,3 +97,12 @@ class UserPostDelete(generic.DeleteView):
     model = Post
     template_name = 'delete_post.html'
     success_url = reverse_lazy('home')
+
+
+class UserPostEdit(generic.UpdateView):
+    """
+    Class-based view for editing and updating blog posts.
+    """
+    model = Post
+    template_name = 'edit_post.html'
+    fields = ['title', 'slug', 'excerpt', 'featured_image', 'content']
