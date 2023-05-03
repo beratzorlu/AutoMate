@@ -1,7 +1,13 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
+{% block content %}
 
-<form action="POST">
-   {% csrf_token %}
-</form>
+<div class="form-group">
+   <form action="{% url 'url_post_edit' post.slug %}" method="POST">
+      {% csrf_token %}
+      {{ form | crispy }}
+      <button type="submit" class="btn btn-outline-danger rounded-0">Submit Changes</button>
+   </form>
+</div>
 
+{% endblock %}

@@ -1,4 +1,4 @@
-from .models import Comment
+from .models import Comment, Post
 from crispy_forms.helper import FormHelper
 from django import forms
 
@@ -14,4 +14,20 @@ class UserCommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ('body', )
+
+
+class UserPostEditForm(forms.ModelForm):
+    """
+    Defines the model for the comment form
+    """
+    class Meta:
+        model = Post
+        fields = ('title', 'excerpt', 'content')
+    
+    widgets = {
+        'title': forms.TextInput(attrs={'class': 'form-control'}),
+        'excerpt': forms.TextInput(attrs={'class': 'form-control'}),
+        'content': forms.Textarea(attrs={'class': 'form-control'}),
+    }
+
 

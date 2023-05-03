@@ -43,8 +43,9 @@
 
     <button class="btn btn-outline-dark border border-danger m-1 rounded-0 float-end" data-bs-toggle="modal"
       data-bs-target="#staticBackdrop"><strong class="text-danger">Delete Blog</strong></button>
-    <a href="{% url 'url_post_edit' post.slug %}" class="btn btn-outline-success border border-success m-1 rounded-0 float-end"><strong>Edit Blog</strong></a>
-    
+    <a href="{% url 'url_post_edit' post.slug %}"
+      class="btn btn-outline-success border border-success m-1 rounded-0 float-end"><strong>Edit Blog</strong></a>
+
     <!-- delete post modal -->
     {% block delete_post %}
     {% include 'delete_post.html' %}

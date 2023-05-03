@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect
 from django.contrib import messages
 from .models import Post
 from django.views import generic, View
-from .forms import UserCommentForm
+from .forms import UserCommentForm, UserPostEditForm
 from django.urls import reverse_lazy
 
 
@@ -105,4 +105,6 @@ class UserPostEdit(generic.UpdateView):
     """
     model = Post
     template_name = 'edit_post.html'
-    fields = ['title', 'slug', 'excerpt', 'featured_image', 'content']
+    form_class = UserPostEditForm
+    success_url = reverse_lazy('home')
+
