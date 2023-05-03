@@ -108,3 +108,4 @@ class UserPostEdit(generic.UpdateView):
     form_class = UserPostEditForm
     success_url = reverse_lazy('home')
 
+

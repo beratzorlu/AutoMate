@@ -18,16 +18,14 @@ class UserCommentForm(forms.ModelForm):
 
 class UserPostEditForm(forms.ModelForm):
     """
-    Defines the model for the comment form
+    Defines the model for the blog edit form
     """
     class Meta:
         model = Post
         fields = ('title', 'excerpt', 'content')
-    
+
     widgets = {
-        'title': forms.TextInput(attrs={'class': 'form-control'}),
+        'title': forms.TextInput(attrs={'class': ' form-control'}),
         'excerpt': forms.TextInput(attrs={'class': 'form-control'}),
         'content': forms.Textarea(attrs={'class': 'form-control'}),
     }
-
-
