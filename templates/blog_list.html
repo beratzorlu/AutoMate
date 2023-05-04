@@ -2,16 +2,67 @@
 {% block content %}
 
 
-<div class="card mt-3 ms-3 me-3 rounded-0">
+<div class="card mt-3 ms-auto me-auto  text-center rounded-0">
     {% if user.is_authenticated %}
     <div class="card-header">
         <h5 class="card-title pt-2">Welcome, <strong class="text-danger">{{ user.username }}</strong>!</h5>
     </div>
     <div class="card-body">
         <p class="card-text pt-1">Here, you will find all blog posts published by other users.</p>
-        <a href="#" class="btn btn-danger border border-dark float-end rounded-0">Add Blog Post</a>
+        <a href="#" class="btn btn-outline-danger border border-dark float-center rounded-0">Add Blog Post</a>
+    </div>
+
+    {% else %}
+
+    <div class="card-header">
+        <h5 class="card-title pt-2">Welcome!</h5>
+    </div>
+    <div class="card-body">
+        <p class="card-text pt-1">Here, you will find all blog posts published by other users.</p>
     </div>
     {% endif %}
+</div>
+
+<hr>
+
+<div class="row row-cols-2 row-cols-md-4 g-4">
+
+    {% for post in post_list %}
+
+    <div class="col">
+        <div class="card m-3 rounded-0 border border-danger">
+
+            {% if "placeholder" in post.featured_image.url %}
+
+            <a href="{% url 'post_detail' post.slug %}"><img
+                    src="https://res.cloudinary.com/dqontmjhf/image/upload/v1682341482/auto-mate-logo_fygxyz.png"
+                    class="card-img-top" alt="Post Featured Image"></a>
+
+            {% else %}
+
+            <a href="{% url 'post_detail' post.slug %}"><img src="{{ post.featured_image.url }}"
+                    class="img-fluid" /></a>
+
+            {% endif %}
+
+            <div class="card-body">
+                <h5 class="card-title">{{ post.title }}</h5>
+                <p class="card-text">Posted by <span class="fst-italic text-danger">{{ post.author }}</span> |
+                    Updated
+                    on <span class="fst-italic">{{ post.updated_on }}</span></p>
+                <p class="card-text">
+                    {{ post.excerpt }}
+                </p>
+                <p class="card-text text-muted h6 fst-italic"><a href="{% url 'post_detail' post.slug %}"><i
+                            class="far fa-heart text-danger"></i></a>
+                    {{ post.likes_numbers }}</p>
+
+            </div>
+        </div>
+    </div>
+
+    {% endfor %}
+
 </div>
 
 
