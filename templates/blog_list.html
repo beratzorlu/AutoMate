@@ -9,7 +9,7 @@
     </div>
     <div class="card-body">
         <p class="card-text pt-1">Here, you will find all blog posts published by other users.</p>
-        <a href="#" class="btn btn-outline-danger border border-dark float-center rounded-0">Add Blog Post</a>
+        <a href="{% url 'url_post_add' %}" class="btn btn-outline-danger border border-dark float-center rounded-0">Add Blog Post</a>
     </div>
 
     {% else %}
@@ -64,6 +64,26 @@
     {% endfor %}
 
 </div>
+
+{% if is_paginated %}
+
+<nav aria-label="Blog page navigation">
+    <ul class="pagination justify-content-center">
+
+        {% if page_obj.has_previous %}
+
+        <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link btn btn-dark border border-danger">PREV</a></li>
+
+        {% endif %}
+
+        {% if page_obj.has_next %}
+
+        <li><a href="?page={{ page_obj.next_page_number }}" class="page-link btn btn-danger border border-dark">NEXT</a></li>
+
+        {% endif %}
+    </ul>
+</nav>
+{% endif %}
 
 
 {% endblock %}

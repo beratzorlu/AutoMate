@@ -106,7 +106,7 @@ class UserPostDelete(generic.DeleteView):
     """
     model = Post
     template_name = 'delete_post.html'
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('blog_list')
 
 
 class UserPostEdit(generic.UpdateView):
@@ -119,3 +119,10 @@ class UserPostEdit(generic.UpdateView):
     success_url = reverse_lazy('home')
 
 
+class UserPostAdd(generic.CreateView):
+    """
+    Class-based view for creating new blog posts.
+    """
+    model = Post
+    template_name = 'add_post.html'
+    fields = "__all__"
