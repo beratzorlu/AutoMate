@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect
 from django.contrib import messages
 from .models import Post
 from django.views import generic, View
-from .forms import UserCommentForm, UserPostEditForm
+from .forms import UserCommentForm, UserPostEditForm, UserAddPostForm
 from django.urls import reverse_lazy
 
 
@@ -125,4 +125,4 @@ class UserPostAdd(generic.CreateView):
     """
     model = Post
     template_name = 'add_post.html'
-    fields = "__all__"
+    form_class = UserAddPostForm

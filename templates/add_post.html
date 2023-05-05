@@ -5,8 +5,8 @@
 
 <div class="text-center">
     <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
         {{ form.as_p }}
+        {% csrf_token %}
     <button class="btn btn-outline-success border border-dark rounded-0">Publish Post</button>
     </form>
 </div>

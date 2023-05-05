@@ -29,3 +29,12 @@ class UserPostEditForm(forms.ModelForm):
         'excerpt': forms.TextInput(attrs={'class': 'form-control'}),
         'content': forms.Textarea(attrs={'class': 'form-control'}),
     }
+
+
+class UserAddPostForm(forms.ModelForm):
+    """
+    Defines the model for the blog edit form
+    """
+    class Meta:
+        model = Post
+        fields = ('title', 'excerpt', 'featured_image', 'status', 'author', 'content')
