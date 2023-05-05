@@ -1,31 +1,39 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<div class="col d-flex justify-content-center">
+    <div class="card mt-3 ms-3 me-3 text-center rounded-0" style="max-width: 768px;">
+        {% if user.is_authenticated %}
+        <div class="card-header">
+            <h5 class="card-title pt-2">Welcome, <strong class="text-danger">{{ user.username }}</strong>!</h5>
+        </div>
+        <div class="card-body">
+            <p class="card-text pt-1">Here, you will browse all blog posts published by other users.</p>
+            <p class="card-text pt-1 fw-bolder">Be sure to respect our community guidlines when posting content.</p>
+            <a href="{% url 'url_post_add' %}"
+                class="btn btn-outline-danger border border-dark float-center rounded-0"><i
+                    class="fas fa-plus-circle"></i> Add Blog Post</a>
+        </div>
 
-<div class="card mt-3 ms-3 me-3  text-center rounded-0">
-    {% if user.is_authenticated %}
-    <div class="card-header">
-        <h5 class="card-title pt-2">Welcome, <strong class="text-danger">{{ user.username }}</strong>!</h5>
-    </div>
-    <div class="card-body">
-        <p class="card-text pt-1">Here, you will find all blog posts published by other users.</p>
-        <a href="{% url 'url_post_add' %}" class="btn btn-outline-danger border border-dark float-center rounded-0"><i class="fas fa-plus-circle"></i> Add Blog Post</a>
-    </div>
+        {% else %}
 
-    {% else %}
+        <div class="card-header">
+            <h5 class="card-title pt-2">Welcome To <span class="text-danger">Auto-Mate</span> Blog!</h5>
+        </div>
+        <div class="card-body">
+            <p class="card-text pt-1">Here, you will find all blog posts published by other users.</p>
+            <p class="card-text pt-1 fst-italic"><i class="fas fa-info-circle"></i> If you would like to post your content, please
+                <a href="{% url 'account_signup' %}" class="link-danger link-underline-opacity-0 link-underline-opacity-75-hover">create an account</a> or <a
+                    href="{% url 'account_login' %}" class="link-danger link-underline-opacity-0 link-underline-opacity-75-hover">sign in</a>.</p>
 
-    <div class="card-header">
-        <h5 class="card-title pt-2">Welcome!</h5>
+        </div>
+        {% endif %}
     </div>
-    <div class="card-body">
-        <p class="card-text pt-1">Here, you will find all blog posts published by other users.</p>
-    </div>
-    {% endif %}
 </div>
 
 <hr>
 
-<div class="row row-cols-2 row-cols-md-4 g-4">
+<div class="row row-cols-lg-4 row-cols-md-4 g-4">
 
     {% for post in post_list %}
 
@@ -72,13 +80,15 @@
 
         {% if page_obj.has_previous %}
 
-        <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link btn btn-dark border border-danger">PREV</a></li>
+        <li><a href="?page={{ page_obj.previous_page_number }}"
+                class="page-link btn btn-dark border border-danger">PREV</a></li>
 
         {% endif %}
 
         {% if page_obj.has_next %}
 
-        <li><a href="?page={{ page_obj.next_page_number }}" class="page-link btn btn-danger border border-dark">NEXT</a></li>
+        <li><a href="?page={{ page_obj.next_page_number }}" class="page-link btn btn-danger border border-dark">NEXT</a>
+        </li>
 
         {% endif %}
     </ul>
