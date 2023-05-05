@@ -116,7 +116,7 @@ class UserPostEdit(generic.UpdateView):
     model = Post
     template_name = 'edit_post.html'
     form_class = UserPostEditForm
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('blog_list')
 
 
 class UserPostAdd(generic.CreateView):
@@ -126,3 +126,10 @@ class UserPostAdd(generic.CreateView):
     model = Post
     template_name = 'add_post.html'
     form_class = UserAddPostForm
+
+    def form_valid(self, form):
+        user = self.request.user
+        form.instance.author = user
+        return super(UserPostAdd, self).form_valid(form)
+    
+

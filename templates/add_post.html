@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1 class="mt-2 text-center">Add Post</h1>
+<h1 class="text-center" style="margin-top: 4rem; margin-bottom: 4rem;">Add Post</h1>
 
 <div class="text-center">
     <form method="POST" enctype="multipart/form-data">
-        {{ form.as_p }}
         {% csrf_token %}
+        {{ form.as_p }}
     <button class="btn btn-outline-success border border-dark rounded-0">Publish Post</button>
     </form>
 </div>

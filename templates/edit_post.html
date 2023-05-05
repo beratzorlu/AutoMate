@@ -3,14 +3,16 @@
 
 {% block content %}
 
+<h1 class="mt-2 text-center">Edit Post</h1>
 
-   <form class="" action="{% url 'url_post_edit' post.slug %}" method="POST">
+<div class="text-center">
+   <form action="{% url 'url_post_edit' post.slug %}" method="POST">
       {% csrf_token %}
-      {{ form | crispy }}
-      <button class="btn btn-outline-success rounded-0 m-3 border border-dark" type="submit">Submit
+      {{ form.as_p }}
+   <button class="btn btn-outline-success rounded-0 m-3 border border-dark" type="submit">Submit
          Changes</button>
    </form>
-   
+</div>  
 
 
 
