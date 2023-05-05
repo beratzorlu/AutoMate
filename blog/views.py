@@ -1,7 +1,7 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.http import HttpResponseRedirect
 from django.contrib import messages
-from .models import Post
+from .models import Post, Comment
 from django.views import generic, View
 from .forms import UserCommentForm, UserPostEditForm, UserAddPostForm
 from django.urls import reverse_lazy
@@ -131,5 +131,18 @@ class UserPostAdd(generic.CreateView):
         user = self.request.user
         form.instance.author = user
         return super(UserPostAdd, self).form_valid(form)
-    
 
+
+def delete_comment(request, comment_id):
+    """
+    Function-based view for deleting comments.
+    """
+    comment = get_object_or_404(Comment, id=comment_id)
+
+    if comment.name == request.user.username:
+        comment.delete()
+        messages.success(request, "Your comment has been deleted.")
+        return redirect(request.META.get('HTTP_REFERRER', reverse('home')))
+    else:
+        messages.error(request, "You are not authorized to delete this comment.")
+        return redirect(request.META.get('HTTP_REFERER', reverse('home')))
