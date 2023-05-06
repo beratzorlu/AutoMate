@@ -116,7 +116,9 @@ class UserPostEdit(generic.UpdateView):
     model = Post
     template_name = 'edit_post.html'
     form_class = UserPostEditForm
-    success_url = reverse_lazy('blog_list')
+
+    def redirect_postdetail(self):
+        return redirect(reverse("post_detail", args=[comment.post.slug]))
 
 
 class UserPostAdd(generic.CreateView):
@@ -137,7 +139,6 @@ def delete_comment(request, comment_id):
     """
     Function-based view for deleting comments.
     """
-
     comment = get_object_or_404(Comment, id=comment_id)
 
     if comment.name == request.user.username:
