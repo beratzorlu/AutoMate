@@ -142,7 +142,7 @@ def delete_comment(request, comment_id):
     if comment.name == request.user.username:
         comment.delete()
         messages.success(request, "Your comment has been deleted.")
-        return redirect(request.META.get('HTTP_REFERRER', reverse('home')))
+        return redirect(request.META.get('HTTP_REFERRER', reverse('blog_list')))
     else:
         messages.error(request, "You are not authorized to delete this comment.")
         return redirect(request.META.get('HTTP_REFERER', reverse('home')))

@@ -8,35 +8,98 @@
     {% if comments %}
 
     {% for comment in comments %}
-    
+
     <div class="card m-1 mb-3 border border-dark-subtle">
         <div class="card-body">
 
             {% if comment.name == "automateadmin" %}
 
             <p class="fs-6">Posted by <a href="#"
-                    class="link-danger link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover">{{ comment.name }}<i class="fas fa-crown"></i></a>
+                    class="link-danger link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover">{{ comment.name }}<i
+                        class="fas fa-crown"></i></a>
                 on <span class="fst-italic">{{ comment.created_on }}</span></p>
-            
+
             <p class="card-text">{{ comment.body }}</p>
 
-            {% if comment.name == user.username %}
+            {% if user.is_authenticated and comment.name == user.username %}
 
-            <a href="{% url 'delete_comment' comment_id=comment.id %}">Delete</a>
+            <a href="#" class="btn btn-danger rounded-0" data-bs-toggle="modal"
+                data-bs-target="#modal-{{ comment.id }}"><i class="fas fa-minus-circle"></i> Delete</a>
+            <a href="#" class="btn btn-success rounded-0"><i class="fas fa-edit"></i> Edit</a>
+
+            <div class="modal fade" id="modal-{{ comment.id }}" data-bs-backdrop="static" tabindex="-1"
+                aria-labelledby="modal-{{ comment.id }}Label" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modal-{{ comment.id }}Label">Delete Comment By <span
+                                    class="text-danger">{{ comment.name }}</span>?</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <h4>
+                                Are you sure you want to <strong class="text-italic text-danger">delete</strong> your
+                                blog post?
+                            </h4>
+                            <p class="fst-italic">
+                                <i class="fas fa-exclamation-circle"></i> Warning: Once deleted, you <strong
+                                    class="text-danger">cannot</strong> retrieve your content.
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-dark rounded-0" data-bs-dismiss="modal">No, Go
+                                Back!</button>
+                            <a href="{% url 'delete_comment' comment_id=comment.id %}"
+                                class="btn btn-outline-danger rounded-0">Yes, Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             {% endif %}
 
             {% else %}
 
             <p class="fs-6">Posted by <a href="#"
-                class="link-danger link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover">{{ comment.name }}</a>
-            on <span class="fst-italic">{{ comment.created_on }}</span></p>
+                    class="link-danger link-offset-2 link-underline-opacity-0 link-underline-opacity-75-hover">{{ comment.name }}</a>
+                on <span class="fst-italic">{{ comment.created_on }}</span></p>
 
             <p class="card-text">{{ comment.body }}</p>
 
-            {% if comment.name == user.username %}
+            {% if user.is_authenticated and comment.name == user.username %}
 
-            <a href="{% url 'delete_comment' comment_id=comment.id %}">Delete</a>
+            <a href="#" class="btn btn-danger rounded-0" data-bs-toggle="modal"
+                data-bs-target="#modal-{{ comment.id }}"><i class="fas fa-minus-circle"></i> Delete</a>
+            <a href="#" class="btn btn-success rounded-0"><i class="fas fa-edit"></i> Edit</a>
+
+            <div class="modal fade" id="modal-{{ comment.id }}" data-bs-backdrop="static" tabindex="-1"
+                aria-labelledby="modal-{{ comment.id }}Label" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modal-{{ comment.id }}Label">Delete Comment By <span
+                                    class="text-danger">{{ comment.name }}</span>?</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <h4>
+                                Are you sure you want to <strong class="text-italic text-danger">delete</strong> your
+                                blog post?
+                            </h4>
+                            <p class="fst-italic">
+                                <i class="fas fa-exclamation-circle"></i> Warning: Once deleted, you <strong
+                                    class="text-danger">cannot</strong> retrieve your content.
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-dark rounded-0" data-bs-dismiss="modal">No, Go
+                                Back!</button>
+                            <a href="{% url 'delete_comment' comment_id=comment.id %}"
+                                class="btn btn-outline-danger rounded-0">Yes, Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             {% endif %}
 
