@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<h1 class="mt-2 text-center">Edit Comment</h1>
+
+<div class="text-center">
+   <form action="{% url 'edit-comment' comment_id=comment.id %}" method="POST">
+      {% csrf_token %}
+      {{ user_comment_form.as_p }}
+   <button class="btn btn-outline-success rounded-0 m-3 border border-dark" type="submit">Submit
+         Changes</button>
+   </form>
+</div>  
+
+
+
+{% endblock %}

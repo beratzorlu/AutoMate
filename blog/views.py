@@ -137,12 +137,37 @@ def delete_comment(request, comment_id):
     """
     Function-based view for deleting comments.
     """
+
     comment = get_object_or_404(Comment, id=comment_id)
 
     if comment.name == request.user.username:
         comment.delete()
         messages.success(request, "Your comment has been deleted.")
-        return redirect(request.META.get('HTTP_REFERRER', reverse('blog_list')))
+        return redirect(reverse("post_detail", args=[comment.post.slug]))
     else:
         messages.error(request, "You are not authorized to delete this comment.")
         return redirect(request.META.get('HTTP_REFERER', reverse('home')))
+
+
+def edit_comment(request, comment_id):
+    """
+    Function-based view for editing comments.
+    """
+    template = "edit_comment.html"
+    comment = get_object_or_404(Comment, id=comment_id)
+    user_comment_form = UserCommentForm(request.POST or None, instance=comment)
+
+    if request.method == "POST":
+        if user_comment_form.is_valid():
+            user_comment_form.save()
+            messages.success(request, "Successfully saved your changes.")
+            return redirect(reverse("post_detail", args=[comment.post.slug]))
+        messages.error(request, "Sorry, something went wrong. Please try again.")
+    
+    context = {
+        "comment": comment,
+        "user_comment_form": user_comment_form,
+    }
+
+    return render(request, template, context)
+    
