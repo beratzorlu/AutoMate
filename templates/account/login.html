@@ -3,40 +3,38 @@
 {% load i18n %}
 {% load account socialaccount %}
 
-{% block head_title %}{% trans "Sign In" %}{% endblock %}
-
 {% block content %}
 
-<div class="vh-100">
-  <div class="container-fluid h-custom">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-md-9 col-lg-6 col-xl-5">
-        <img src="https://res.cloudinary.com/dqontmjhf/image/upload/v1682463461/login-banner2_br7ytq.png"
-          class="img-fluid" alt="Sample image">
-      </div>
-      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1 border-danger">
-        <h1 class="display-6 text-center fst-italic">{% trans "Connect With Your Automates" %}</h1>
-        <form class="login" method="POST" action="{% url 'account_login' %}">
-          {% csrf_token %}
-          {{ form.as_p }}
-          {% if redirect_field_value %}
-          <div class="form-outline mb-4 mt-8">
-            <h3>Email address</h3>
-            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"
-              class="form-control form-control-lg border border-danger" />
-          </div>
-          {% endif %}
-          <p><a class="link-danger link-underline-opacity-0 link-underline-opacity-100-hover"
-              href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a></p>
-          <div class="text-center text-lg-start mt-4 pt-2">
-            <button class="btn btn-lg btn-dark rounded-0 mb-1" type="submit">{% trans "Login" %}</button>
-            <p class="small fw-bold mt-2 pt-1 mb-0">{% blocktrans %}If you're new here, {% endblocktrans %}<a href="{% url 'account_signup' %}"
-                class="link-danger link-underline-opacity-0 link-underline-opacity-100-hover">please create an account.</a>
-            </p>
-          </div>
+<div class="container-fluid h-custom">
+  <div class="row d-flex justify-content-center align-items-center h-100">
+    <div class="col-md-9 col-lg-6 col-xl-5">
+      <img src="https://res.cloudinary.com/dqontmjhf/image/upload/v1682463461/login-banner2_br7ytq.png"
+        class="img-fluid" alt="Login banner image">
+    </div>
+    <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1 border-danger">
+      <h1 class="display-6 text-center fst-italic">{% trans "Connect With Your Automates" %}</h1>
+      <form class="login" method="POST" action="{% url 'account_login' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        {% if redirect_field_value %}
+        <div class="form-outline mb-4 mt-8">
+          <h3>Email address</h3>
+          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"
+            class="form-control form-control-lg border border-danger" />
+        </div>
+        {% endif %}
+        <p><a class="link-danger link-underline-opacity-0 link-underline-opacity-100-hover"
+            href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a></p>
+        <div class="text-center text-lg-start mt-4 pt-2">
+          <button class="btn btn-lg btn-dark rounded-0 mb-1" type="submit">{% trans "Login" %}</button>
+          <p class="small fw-bold mt-2 pt-1 mb-0">{% blocktrans %}If you're new here, {% endblocktrans %}<a
+              href="{% url 'account_signup' %}"
+              class="link-danger link-underline-opacity-0 link-underline-opacity-100-hover">please create an
+              account.</a>
+          </p>
+        </div>
 
-        </form>
-      </div>
+      </form>
     </div>
   </div>
 </div>

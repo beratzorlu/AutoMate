@@ -3,6 +3,9 @@
 {% block content %}
 
 <!-- carousel -->
+{% block carousel %}
+{% include "carousel.html" %}
+{% endblock carousel %}
 
 <!-- featured posts -->
 <div class="text-center m-3">
@@ -11,16 +14,25 @@
 <div class="bg-light">
     <div class="container">
         <div class="row">
+
             {% for post in post_list %}
+            
             {% if post.likes_numbers >= 4 %}
+
             <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="card mb-5 shadow-sm">
+
                     {% if "placeholder" in post.featured_image.url %}
+
                     <img src="https://res.cloudinary.com/dqontmjhf/image/upload/v1682341482/auto-mate-logo_fygxyz.png"
                         class="img-fluid" />
+
                     {% else %}
+
                     <img src="{{ post.featured_image.url }}" class="img-fluid"/>
+
                     {% endif %}
+                    
                     <div class="card-body">
                         <div class="card-title">
                             <h2>{{ post.title }}</h2>
@@ -47,8 +59,11 @@
                     </div>
                 </div>
             </div>
+
             {% endif %}
+
             {% endfor %}
+
         </div>
     </div>
 </div>
