@@ -1,6 +1,7 @@
 from .models import Comment, Post
 from crispy_forms.helper import FormHelper
 from django import forms
+from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
 
 
 class UserCommentForm(forms.ModelForm):
@@ -24,11 +25,11 @@ class UserPostEditForm(forms.ModelForm):
         model = Post
         fields = ('title', 'excerpt', 'content')
 
-    widgets = {
-        'title': forms.TextInput(attrs={'class': ' form-control'}),
-        'excerpt': forms.TextInput(attrs={'class': 'form-control'}),
-        'content': forms.Textarea(attrs={'class': 'form-control'}),
-    }
+        widgets = {
+            'title': forms.TextInput(attrs={'class': ' form-control'}),
+            'excerpt': forms.TextInput(attrs={'class': 'form-control'}),
+            'content': forms.Textarea(attrs={'class': 'form-control'}),
+        }
 
 
 class UserAddPostForm(forms.ModelForm):
