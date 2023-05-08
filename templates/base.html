@@ -62,7 +62,20 @@
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse text-center bg-light-subtle" id="navbarSupportedContent">
+                <hr>
+                <form class="d-flex justify-content-center" role="link">
+
+                    {% if user.is_authenticated %}
+
+                    <ul class="list-unstyled class">
+                        <li><a class="btn btn-outline-dark border border-danger m-1 rounded-0">Logged in as
+                                <strong>{{ user.username }}</strong></a></li>
+                        </li>
+                    </ul>
+
+                    {% endif %}
+                </form>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link link-underline-opacity-0 link-underline-opacity-100-hover active"
@@ -71,7 +84,7 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="{% url 'blog_list' %}">Blog</a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <!-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             Buyer's Guide
@@ -81,22 +94,21 @@
                             <li><a class="dropdown-item" href="#">Buying Your First Car?</a></li>
                             <li><a class="dropdown-item" href="#">Understanding Second Hand Cars</a></li>
                         </ul>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a class="btn btn-danger rounded-0" href="#" role="button">Consultation</a>
                     </li>
                     <li class="nav-item active"><a class="nav-link" href="#">Contact Us</a></li>
                 </ul>
-                <form class="d-flex" role="link">
+                <form class="align-items-center mb-5 pt-1" role="link">
 
                     {% if user.is_authenticated %}
 
                     <ul class="list-unstyled class">
-                        <li><a class="btn btn-outline-dark border border-danger m-1 rounded-0">Logged in as
-                                <strong>{{ user.username }}</strong></a></li>
+
+                        <li><a class="btn btn-outline-danger m-1 rounded-0 float-start"
+                                href="{% url 'account_logout' %}">Logout</a>
                         <li><a class="btn btn-dark m-1 rounded-0 float-end" href="#">My Profile</a></li>
-                        <li><a class="btn btn-outline-danger m-1 rounded-0" href="{% url 'account_logout' %}">Logout</a>
-                        </li>
                     </ul>
 
                     {% else %}
@@ -106,6 +118,7 @@
 
                     {% endif %}
                 </form>
+                <hr>
             </div>
         </div>
     </nav>
