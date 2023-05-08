@@ -14,7 +14,8 @@ class AdminPost(SummernoteModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
     list_display = ('title', 'slug', 'created_on', 'author', 'status')
     list_filter = ('created_on', 'status')
-    search_fields = ('title', 'slug', 'created_on', 'status', 'author__username')
+    search_fields = (
+        'title', 'slug', 'created_on', 'status', 'author__username')
 
 
 @admin.register(Comment)
@@ -29,6 +30,3 @@ class CommentAdmin(admin.ModelAdmin):
 
     def comment_approval(self, request, queryset):
         queryset.update(approved=True)
-
-    
-

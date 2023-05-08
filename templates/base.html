@@ -52,7 +52,7 @@
 
 <body>
     <!-- Navigation -->
-    <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'home' %}"><img
                     src="https://res.cloudinary.com/dqontmjhf/image/upload/v1682341482/auto-mate-logo_fygxyz.png"
@@ -64,18 +64,6 @@
             </button>
             <div class="collapse navbar-collapse text-center bg-light-subtle" id="navbarSupportedContent">
                 <hr>
-                <form class="d-flex justify-content-center" role="link">
-
-                    {% if user.is_authenticated %}
-
-                    <ul class="list-unstyled class">
-                        <li><a class="btn btn-outline-dark border-top border-bottom m-1 rounded-0">Logged in as
-                            <mark><strong>{{ user.username }}</strong></mark></a></li>
-                        </li>
-                    </ul>
-
-                    {% endif %}
-                </form>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link link-underline-opacity-0 link-underline-opacity-100-hover active"
@@ -100,12 +88,14 @@
                     </li>
                     <li class="nav-item active"><a class="nav-link" href="#">Contact Us</a></li>
                 </ul>
-                <form class="align-items-center mb-5 pt-1" role="link">
+                <form class="align-items-center pt-1" role="link">
 
                     {% if user.is_authenticated %}
 
                     <ul class="list-unstyled class">
-
+                        <li><a class="btn btn-outline-dark border-top border-bottom m-1 rounded-0">Logged in as
+                                <mark><strong>{{ user.username }}</strong></mark></a></li>
+                        </li>
                         <li><a class="btn btn-outline-danger m-1 rounded-0 float-start"
                                 href="{% url 'account_logout' %}">Logout</a>
                         <li><a class="btn btn-dark m-1 rounded-0 float-end" href="#">My Profile</a></li>
@@ -118,7 +108,6 @@
 
                     {% endif %}
                 </form>
-                <hr>
             </div>
         </div>
     </nav>
