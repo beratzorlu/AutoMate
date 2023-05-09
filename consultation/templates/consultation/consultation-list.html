@@ -47,11 +47,23 @@
 <div class="text-center">
 <hr>
 <h1 class="pt-5">Your Applications</h1>
-{% for consultation in consultations %}
-    {% if user.is_authenticated and consultation.approved %}
-    <p>{{ consultation.author }}</p>
+</div>
+<div class="d-flex text-center justify-content-center">
+    {% for consultation in consultations %}
+    {% if user.is_authenticated %}
+    <div class="card me-1" style="width: 18rem;">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">{{ consultation.first_name}}</li>
+          <li class="list-group-item">{{ consultation.last_name}}</li>
+          <li class="list-group-item">{{ consultation.email }}</li>
+          <li class="list-group-item">{{ consultation.budget }}</li>
+          <li class="list-group-item">{{ consultation.fav_maker }}</li>
+          <li class="list-group-item">{{ consultation.author }}</li>
+        </ul>
+      </div>
     {% endif %}
 {% endfor %}
 </div>
+
 
 {% endblock %}
