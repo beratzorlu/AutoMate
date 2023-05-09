@@ -15,7 +15,8 @@
                     <p class="card-text pt-1">Simply fill out our application form, and a consultant will be
                         in touch with you.</p>
                     <p class="card-text pt-1"><i class="fas fa-car"></i></p>
-                    <a href="{% url 'application-form' %}" class="btn btn-outline-danger border border-danger float-center rounded-0">Apply Now</a>
+                    <a href="{% url 'application-form' %}"
+                        class="btn btn-outline-danger border border-danger float-center rounded-0">Apply Now</a>
                 </ul>
             </div>
 
@@ -32,11 +33,14 @@
                     <p class="card-text pt-1">Simply fill out our application form, and a consultant will be
                         in touch with you.</p>
                     <p class="card-text pt-1"><i class="fas fa-car"></i></p>
-                    <p class="card-text pt-1 pb-1 border border-dark">To be able to avail of our consultation service you must first either <a href="{% url 'account_signup' %}"
-                        class="link-danger link-underline-opacity-0 link-underline-opacity-75-hover">create an
-                        account</a> or <a href="{% url 'account_login' %}"
-                        class="link-danger link-underline-opacity-0 link-underline-opacity-75-hover">sign in</a>.</p></p>
-                    
+                    <p class="card-text pt-1 pb-1 border border-dark">To be able to avail of our consultation service
+                        you must first either <a href="{% url 'account_signup' %}"
+                            class="link-danger link-underline-opacity-0 link-underline-opacity-75-hover">create an
+                            account</a> or <a href="{% url 'account_login' %}"
+                            class="link-danger link-underline-opacity-0 link-underline-opacity-75-hover">sign in</a>.
+                    </p>
+                    </p>
+
                 </ul>
             </div>
             {% endif %}
@@ -45,28 +49,45 @@
 </div>
 
 <div class="text-center">
-<hr>
-<h1 class="pt-5">Your Applications</h1>
+    <hr>
+    {% if user.is_authenticated %}
+    <h1 class="pt-5">Your Applications</h1>
 </div>
 <div class="d-flex text-center justify-content-center">
     {% for consultation in consultations %}
     {% if user.is_authenticated and consultation.email == user.email %}
     <div class="card me-1" style="width: 18rem;">
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">{{ consultation.first_name}}</li>
-          <li class="list-group-item">{{ consultation.last_name}}</li>
-          <li class="list-group-item">{{ consultation.email }}</li>
-          <li class="list-group-item">{{ consultation.birthdate }}</li>
-          <li class="list-group-item">{{ consultation.phone }}</li>
-          <li class="list-group-item">{{ consultation.budget }}</li>
-          <li class="list-group-item">{{ consultation.fav_maker }}</li>
-          <li class="list-group-item">{{ consultation.purpose }}</li>
-          <li class="list-group-item">{{ consultation.author }}</li>
+            <li class="list-group-item">Name: {{ consultation.first_name}}</li>
+            <li class="list-group-item">Surname: {{ consultation.last_name}}</li>
+            <li class="list-group-item">Email: {{ consultation.email }}</li>
+            <li class="list-group-item">Birthdate: {{ consultation.birthdate }}</li>
+            <li class="list-group-item">Phone: {{ consultation.phone }}</li>
+            <li class="list-group-item">Budget: {{ consultation.budget }}</li>
+            <li class="list-group-item">Favourite Maker: {{ consultation.fav_maker }}</li>
+            <li class="list-group-item">{{ consultation.purpose }}</li>
+            <li class="list-group-item">{{ consultation.author }}</li>
         </ul>
-      </div>
+    </div>
     {% endif %}
-{% endfor %}
+    {% endfor %}
+    {% else %}
 </div>
+<div class="bg-dark text-white pt-4 pb-4 ps-3">
+    <h1>
+        How Does Consultation Work?
+    </h1>
+    <ol>
+        <li class="py-2">First, you fill up the application form provided on this page.</li>
+        <li class="pb-2">Once submitted, a member of our team will review your application.</li>
+        <li class="pb-2">After this process, your application will be transferred to one of our trained consultants.</li>
+        <li class="pb-2">They will review the information you submitted, and they will contact you for a screening call.</li>
+        <li class="pb-2">Service payment will be handled before the next step, after which your assigned consultant will schedule a meeting with you.</li>
+        <li class="pb-2">Finally, you and your consultant will review your current financial situation and discuss the best
+            course of action towards purchasing your first second-hand car.</li>
+    </ul>
+</div>
+{% endif %}
 
 
 {% endblock %}

@@ -69,7 +69,7 @@ class Consultation(models.Model):
     slug = models.SlugField(max_length=200, unique=True)
     birthdate = models.DateField()
     email = models.EmailField()
-    phone = PhoneNumberField(null=False, blank=False, unique=True)
+    phone = PhoneNumberField(null=False, blank=False, unique=False)
     fav_maker = models.CharField(
         max_length=13, choices=CAR_MAKER_CHOICES, default='default')
     budget = models.PositiveIntegerField(validators=[MaxValueValidator(999999)])
