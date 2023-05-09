@@ -50,7 +50,7 @@
 
 <div class="text-center">
     <hr>
-    {% if user.is_authenticated %}
+{% if user.is_authenticated %}
     <h1 class="pt-5">Your Applications</h1>
 </div>
 <div class="d-flex text-center justify-content-center">
@@ -71,7 +71,7 @@
     </div>
     {% endif %}
     {% endfor %}
-    {% else %}
+{% else %}
 </div>
 <div class="bg-dark text-white pt-4 pb-4 ps-3">
     <h1>
