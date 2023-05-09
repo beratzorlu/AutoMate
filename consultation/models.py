@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from django.template.defaultfilters import slugify
 from django.core.validators import MaxValueValidator
 from cloudinary.models import CloudinaryField
+from phonenumber_field.modelfields import PhoneNumberField
 
 
 CAR_MAKER_CHOICES = (
@@ -68,6 +69,7 @@ class Consultation(models.Model):
     slug = models.SlugField(max_length=200, unique=True)
     birthdate = models.DateField()
     email = models.EmailField()
+    phone = PhoneNumberField(blank=True)
     fav_maker = models.CharField(
         max_length=13, choices=CAR_MAKER_CHOICES, default='default')
     budget = models.PositiveIntegerField(validators=[MaxValueValidator(999999)])
