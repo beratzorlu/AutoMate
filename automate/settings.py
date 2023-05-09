@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.sites',
+    'phonenumber_field',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -52,7 +53,7 @@ INSTALLED_APPS = [
     'django_summernote',
     'crispy_forms',
     'blog',
-    'consultation'
+    'consultation',
 ]
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'

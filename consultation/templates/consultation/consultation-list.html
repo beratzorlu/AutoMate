@@ -1,6 +1,52 @@
 {% extends "base.html" %}
 {% block content %}
+<div class="bg-danger">
+    <div class="col d-flex justify-content-center">
+        <div class="card m-3 text-center rounded-0" style="max-width: 768px;">
+            {% if user.is_authenticated %}
+            <div class="card-header">
+                <h5 class="card-title pt-2"><i class="far fa-lightbulb"></i> Consultation Service <i
+                        class="far fa-lightbulb"></i></h5>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled">
+                    <p class="card-text pt-1">At AutoMate, you can avail of our trained consultants to help you take the
+                        next step towards buying first second-hand car!</p>
+                    <p class="card-text pt-1">Simply fill out our application form, and a consultant will be
+                        in touch with you.</p>
+                    <p class="card-text pt-1"><i class="fas fa-car"></i></p>
+                    <a href="#" class="btn btn-outline-danger border border-danger float-center rounded-0">Apply Now</a>
+                </ul>
+            </div>
 
+            {% else %}
 
+            <div class="card-header">
+                <h5 class="card-title pt-2"><i class="far fa-lightbulb"></i> Consultation Service <i
+                        class="far fa-lightbulb"></i></h5>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled">
+                    <p class="card-text pt-1">At AutoMate, you can avail of our trained consultants to help you take the
+                        next step towards buying first second-hand car!</p>
+                    <p class="card-text pt-1">Simply fill out our application form, and a consultant will be
+                        in touch with you.</p>
+                    <p class="card-text pt-1"><i class="fas fa-car"></i></p>
+                    <p class="card-text pt-1 pb-1 border border-dark">To be able to avail of our consultation service you must first either <a href="{% url 'account_signup' %}"
+                        class="link-danger link-underline-opacity-0 link-underline-opacity-75-hover">create an
+                        account</a> or <a href="{% url 'account_login' %}"
+                        class="link-danger link-underline-opacity-0 link-underline-opacity-75-hover">sign in</a>.</p></p>
+                    
+                </ul>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<div class="text-center">
+<hr>
+<h1 class="pt-5">Your Applications</h1>
+</div>
 
 {% endblock %}
