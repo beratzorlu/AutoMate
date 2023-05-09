@@ -15,7 +15,7 @@
                     <p class="card-text pt-1">Simply fill out our application form, and a consultant will be
                         in touch with you.</p>
                     <p class="card-text pt-1"><i class="fas fa-car"></i></p>
-                    <a href="#" class="btn btn-outline-danger border border-danger float-center rounded-0">Apply Now</a>
+                    <a href="{% url 'application-form' %}" class="btn btn-outline-danger border border-danger float-center rounded-0">Apply Now</a>
                 </ul>
             </div>
 
@@ -47,6 +47,11 @@
 <div class="text-center">
 <hr>
 <h1 class="pt-5">Your Applications</h1>
+{% for consultation in consultations %}
+    {% if user.is_authenticated and consultation.approved %}
+    <p>{{ consultation.author }}</p>
+    {% endif %}
+{% endfor %}
 </div>
 
 {% endblock %}
