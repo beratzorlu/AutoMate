@@ -50,7 +50,7 @@
 </div>
 <div class="d-flex text-center justify-content-center">
     {% for consultation in consultations %}
-    {% if user.is_authenticated %}
+    {% if user.is_authenticated and consultation.email == user.email %}
     <div class="card me-1" style="width: 18rem;">
         <ul class="list-group list-group-flush">
           <li class="list-group-item">{{ consultation.first_name}}</li>
