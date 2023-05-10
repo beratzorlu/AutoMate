@@ -6,7 +6,7 @@ from django.template.defaultfilters import slugify
 from django.core.validators import MaxValueValidator
 from cloudinary.models import CloudinaryField
 from phonenumber_field.modelfields import PhoneNumberField
-from cars import CAR_MAKER_CHOICES
+from consultation.cars import CAR_MAKER_CHOICES
 
 
 STATUS = ((0, "Draft"), (1, "Published"))
