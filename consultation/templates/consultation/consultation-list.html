@@ -53,10 +53,10 @@
 {% if user.is_authenticated %}
     <h1 class="pt-5">Your Applications</h1>
 </div>
-<div class="d-flex text-center justify-content-center mt-3">
+<div class="d-flex text-center flex-wrap justify-content-center mt-3">
     {% for consultation in consultations %}
     {% if user.is_authenticated and consultation.author.id == user.id %}
-    <div class="card me-1" style="width: 18rem;">
+    <div class="card me-1 mb-4" style="width: 18rem;">
         <ul class="list-group list-group-flush">
             <li class="list-group-item">Name: {{ consultation.first_name}}</li>
             <li class="list-group-item">Surname: {{ consultation.last_name}}</li>
