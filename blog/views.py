@@ -117,9 +117,7 @@ class UserPostEdit(generic.UpdateView):
     model = Post
     template_name = 'edit_post.html'
     form_class = UserPostEditForm
-
-    def redirect_postdetail(self):
-        return redirect(reverse("post_detail", args=[comment.post.slug]))
+    success_url = reverse_lazy('consultation-list')
 
 
 class UserPostAdd(generic.CreateView):

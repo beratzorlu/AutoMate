@@ -66,7 +66,6 @@ class Consultation(models.Model):
     last_name = models.CharField(max_length=200, unique=False)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="consultation_application")
-    slug = models.SlugField(max_length=200, unique=True)
     birthdate = models.DateField()
     phone = PhoneNumberField(null=False, blank=False, unique=False)
     fav_maker = models.CharField(
@@ -85,9 +84,4 @@ class Consultation(models.Model):
     
     def get_absolute_url(self):
         return reverse('consultation-list', args={self.slug})
-
-    def save(self, *args, **kwargs):
-        if not self.slug:
-            self.slug = slugify(self.author)
-        return super().save(*args, **kwargs)
 

@@ -10,3 +10,12 @@ class ApplicationForm(forms.ModelForm):
     class Meta:
         model = Consultation
         fields = ('first_name', 'last_name', 'phone', 'author', 'birthdate', 'fav_maker', 'budget', 'purpose', 'status')
+
+
+class EditApplicationForm(forms.ModelForm):
+    """
+    Defines the model for editing the application form
+    """
+    class Meta:
+        model = Consultation
+        fields = ('budget', 'purpose')

@@ -51,7 +51,7 @@
 
 <div class="text-center">
     <hr>
-{% if user.is_authenticated %}
+    {% if user.is_authenticated %}
     <h1 class="pt-5">Your Applications</h1>
     <h5>Below, you will find summary cards of your submitted applications.</h5>
 </div>
@@ -60,21 +60,27 @@
     {% if user.is_authenticated and consultation.author.id == user.id %}
     <div class="card me-1 mb-4 text-start" style="width: 18rem;">
         <ul class="list-group list-group-flush">
+            <li class="list-group-item border border-dark"><strong class="text-danger">Application Id:</strong> {{ consultation.id }}
+            </li>
+            <li class="list-group-item"><strong class="text-danger">Username:</strong> {{ consultation.author }}
+            </li>
             <li class="list-group-item"><strong class="text-dark">Applied on</strong> {{ consultation.created_on }}</li>
-            <li class="list-group-item"><strong class="text-dark">Last updated</strong> {{ consultation.updated_on }}</li>
+            <li class="list-group-item"><strong class="text-dark">Last updated</strong> {{ consultation.updated_on }}
+            </li>
             <li class="list-group-item"><strong class="text-danger">Name:</strong> {{ consultation.first_name}}</li>
             <li class="list-group-item"><strong class="text-danger">Surname:</strong> {{ consultation.last_name}}</li>
-            <li class="list-group-item"><strong class="text-danger">Email:</strong> {{ consultation.email }}</li>
-            <li class="list-group-item"><strong class="text-danger">Birthdate:</strong> {{ consultation.birthdate }}</li>
+            <li class="list-group-item"><strong class="text-danger">Birthdate:</strong> {{ consultation.birthdate }}
+            </li>
             <li class="list-group-item"><strong class="text-danger">Phone:</strong> {{ consultation.phone }}</li>
             <li class="list-group-item"><strong class="text-danger">Budget:</strong> {{ consultation.budget }}</li>
-            <li class="list-group-item"><strong class="text-danger">Favourite Maker:</strong> {{ consultation.fav_maker }}</li>
+            <li class="list-group-item"><strong class="text-danger">Favourite Maker:</strong>
+                {{ consultation.fav_maker }}</li>
             <li class="list-group-item"><strong class="text-danger">Purpose:</strong> {{ consultation.purpose }}</li>
         </ul>
-    </div>
+        <a href="{% url 'edit-application' consultation.pk %}" class="btn btn-outline-success rounded-0">Edit</a>
     {% endif %}
     {% endfor %}
-{% else %}
+    {% else %}
 </div>
 <div class="bg-dark text-white pt-4 pb-4 ps-3">
     <h1>
@@ -83,12 +89,16 @@
     <ol>
         <li class="py-2">First, you fill up the application form provided on this page.</li>
         <li class="pb-2">Once submitted, a member of our team will review your application.</li>
-        <li class="pb-2">After this process, your application will be transferred to one of our trained consultants.</li>
-        <li class="pb-2">They will review the information you submitted, and they will contact you for a screening call.</li>
-        <li class="pb-2">Service payment will be handled before the next step, after which your assigned consultant will schedule a meeting with you.</li>
-        <li class="pb-2">Finally, you and your consultant will review your current financial situation and discuss the best
+        <li class="pb-2">After this process, your application will be transferred to one of our trained consultants.
+        </li>
+        <li class="pb-2">They will review the information you submitted, and they will contact you for a screening call.
+        </li>
+        <li class="pb-2">Service payment will be handled before the next step, after which your assigned consultant will
+            schedule a meeting with you.</li>
+        <li class="pb-2">Finally, you and your consultant will review your current financial situation and discuss the
+            best
             course of action towards purchasing your first second-hand car.</li>
-    </ul>
+        </ul>
 </div>
 {% endif %}
 
