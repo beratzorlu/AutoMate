@@ -53,9 +53,9 @@
 {% if user.is_authenticated %}
     <h1 class="pt-5">Your Applications</h1>
 </div>
-<div class="d-flex text-center justify-content-center">
+<div class="d-flex text-center justify-content-center mt-3">
     {% for consultation in consultations %}
-    {% if user.is_authenticated and consultation.email == user.email %}
+    {% if user.is_authenticated and consultation.author.id == user.id %}
     <div class="card me-1" style="width: 18rem;">
         <ul class="list-group list-group-flush">
             <li class="list-group-item">Name: {{ consultation.first_name}}</li>
@@ -66,7 +66,6 @@
             <li class="list-group-item">Budget: {{ consultation.budget }}</li>
             <li class="list-group-item">Favourite Maker: {{ consultation.fav_maker }}</li>
             <li class="list-group-item">{{ consultation.purpose }}</li>
-            <li class="list-group-item">{{ consultation.author }}</li>
         </ul>
     </div>
     {% endif %}
