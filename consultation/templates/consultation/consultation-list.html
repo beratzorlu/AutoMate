@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+
 <div class="bg-danger">
     <div class="col d-flex justify-content-center">
         <div class="card m-3 text-center rounded-0" style="max-width: 768px;">
@@ -52,20 +53,23 @@
     <hr>
 {% if user.is_authenticated %}
     <h1 class="pt-5">Your Applications</h1>
+    <h5>Below, you will find summary cards of your submitted applications.</h5>
 </div>
 <div class="d-flex text-center flex-wrap justify-content-center mt-3">
     {% for consultation in consultations %}
     {% if user.is_authenticated and consultation.author.id == user.id %}
-    <div class="card me-1 mb-4" style="width: 18rem;">
+    <div class="card me-1 mb-4 text-start" style="width: 18rem;">
         <ul class="list-group list-group-flush">
-            <li class="list-group-item">Name: {{ consultation.first_name}}</li>
-            <li class="list-group-item">Surname: {{ consultation.last_name}}</li>
-            <li class="list-group-item">Email: {{ consultation.email }}</li>
-            <li class="list-group-item">Birthdate: {{ consultation.birthdate }}</li>
-            <li class="list-group-item">Phone: {{ consultation.phone }}</li>
-            <li class="list-group-item">Budget: {{ consultation.budget }}</li>
-            <li class="list-group-item">Favourite Maker: {{ consultation.fav_maker }}</li>
-            <li class="list-group-item">{{ consultation.purpose }}</li>
+            <li class="list-group-item"><strong class="text-dark">Applied on</strong> {{ consultation.created_on }}</li>
+            <li class="list-group-item"><strong class="text-dark">Last updated</strong> {{ consultation.updated_on }}</li>
+            <li class="list-group-item"><strong class="text-danger">Name:</strong> {{ consultation.first_name}}</li>
+            <li class="list-group-item"><strong class="text-danger">Surname:</strong> {{ consultation.last_name}}</li>
+            <li class="list-group-item"><strong class="text-danger">Email:</strong> {{ consultation.email }}</li>
+            <li class="list-group-item"><strong class="text-danger">Birthdate:</strong> {{ consultation.birthdate }}</li>
+            <li class="list-group-item"><strong class="text-danger">Phone:</strong> {{ consultation.phone }}</li>
+            <li class="list-group-item"><strong class="text-danger">Budget:</strong> {{ consultation.budget }}</li>
+            <li class="list-group-item"><strong class="text-danger">Favourite Maker:</strong> {{ consultation.fav_maker }}</li>
+            <li class="list-group-item"><strong class="text-danger">Purpose:</strong> {{ consultation.purpose }}</li>
         </ul>
     </div>
     {% endif %}
@@ -87,6 +91,5 @@
     </ul>
 </div>
 {% endif %}
-
 
 {% endblock %}

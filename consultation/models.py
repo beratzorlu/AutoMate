@@ -68,7 +68,6 @@ class Consultation(models.Model):
         User, on_delete=models.CASCADE, related_name="consultation_application")
     slug = models.SlugField(max_length=200, unique=True)
     birthdate = models.DateField()
-    email = models.EmailField()
     phone = PhoneNumberField(null=False, blank=False, unique=False)
     fav_maker = models.CharField(
         max_length=13, choices=CAR_MAKER_CHOICES, default='default')
@@ -82,13 +81,13 @@ class Consultation(models.Model):
         ordering = ["-created_on"]
 
     def __str__(self):
-        return f'Application by {self.email}.'
+        return f'Application by {self.author}.'
     
     def get_absolute_url(self):
         return reverse('consultation-list', args={self.slug})
 
     def save(self, *args, **kwargs):
         if not self.slug:
-            self.slug = slugify(self.email)
+            self.slug = slugify(self.author)
         return super().save(*args, **kwargs)
 

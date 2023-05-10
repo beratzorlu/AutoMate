@@ -7,7 +7,8 @@
     <form method="POST">
         {% csrf_token %}
         {{ form | crispy }}
-        <button type="submit" class="mt-4">Submit Application</button>
+        <button class="btn btn-outline-success rounded-0 mt-4 border border-dark" type="submit">Submit
+            Changes</button>
     </form>
 </div>
 

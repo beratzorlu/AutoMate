@@ -9,4 +9,4 @@ class ApplicationForm(forms.ModelForm):
     """
     class Meta:
         model = Consultation
-        fields = ('first_name', 'last_name', 'email', 'phone', 'author', 'birthdate', 'fav_maker', 'budget', 'purpose', 'status')
+        fields = ('first_name', 'last_name', 'phone', 'author', 'birthdate', 'fav_maker', 'budget', 'purpose', 'status')
