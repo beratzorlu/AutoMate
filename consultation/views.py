@@ -14,13 +14,15 @@ class ConsultationList(generic.ListView):
     Class-based list view of Consultation model
     """
     model = Consultation
-    queryset = Consultation.objects.filter(status=1).order_by('-created_on')
     template_name = 'consultation/consultation-list.html'
     paginate_by = 6
 
+    def get_queryset(self):
+        return Consultation.objects.filter(status=1).order_by('-created_on')
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['consultations'] = self.queryset
+        context['consultations'] = self.get_queryset()
         return context
 
 
@@ -52,3 +54,35 @@ class EditApplications(generic.UpdateView):
         consultation.save()
         messages.success(self.request, 'Success! Your changes to your application have been saved.')
         return redirect(reverse("consultation-list"), pk=consultation.pk)
+
+
+class ConsultationDetailView(View):
+    """
+    Class-based view of the post detail page
+    """
+    def get(self, request, *args, **kwargs):
+        queryset = Consultation.objects.filter(status=1)
+        pk = self.kwargs.get('pk')
+        consultation = get_object_or_404(queryset, pk=pk)
+
+        return render(
+            request,
+            "consultation-list.html",
+            {
+                "consultation": consultation,
+            },
+        )
+
+    def post(self, request, *args, **kwargs):
+        queryset = Consultation.objects.filter(status=1)
+        pk = self.kwargs.get('pk')
+        consultation = get_object_or_404(queryset, pk=pk)
+
+        return render(
+            request,
+            "consultation-list.html",
+            {
+                "consultation": consultation,
+            },
+        )
+

@@ -30,7 +30,7 @@ class BlogList(generic.ListView):
 
 class DetailView(View):
     """
-    Class-based view of the detailed post detail page
+    Class-based view of the post detail page
     """
     def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.filter(status=1)
