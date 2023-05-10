@@ -38,6 +38,7 @@ class AddApplications(generic.CreateView):
     def form_valid(self, form):
         user = self.request.user
         form.instance.author = user
+        messages.success(self.request, 'Success! Your application has been submitted.')
         return super(AddApplications, self).form_valid(form)
 
 

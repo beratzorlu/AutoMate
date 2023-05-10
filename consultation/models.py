@@ -6,54 +6,8 @@ from django.template.defaultfilters import slugify
 from django.core.validators import MaxValueValidator
 from cloudinary.models import CloudinaryField
 from phonenumber_field.modelfields import PhoneNumberField
+from cars import CAR_MAKER_CHOICES
 
-
-CAR_MAKER_CHOICES = (
-    ('default', 'Select Car Maker'),
-    ('Acura', 'Acura'),
-    ('Alfa Romeo', 'Alfa Romeo'),
-    ('Aston Martin', 'Aston Martin'),
-    ('Audi', 'Audi'),
-    ('Bentley', 'Bentley'),
-    ('BMW', 'BMW'),
-    ('Buick', 'Buick'),
-    ('Cadillac', 'Cadillac'),
-    ('Chevrolet', 'Chevrolet'),
-    ('Chrysler', 'Chrysler'),
-    ('Dodge', 'Dodge'),
-    ('Ferrari', 'Ferrari'),
-    ('Fiat', 'Fiat'),
-    ('Ford', 'Ford'),
-    ('Genesis', 'Genesis'),
-    ('GMC', 'GMC'),
-    ('Honda', 'Honda'),
-    ('Hyundai', 'Hyundai'),
-    ('Infiniti', 'Infiniti'),
-    ('Jaguar', 'Jaguar'),
-    ('Jeep', 'Jeep'),
-    ('Kia', 'Kia'),
-    ('Lamborghini', 'Lamborghini'),
-    ('Land Rover', 'Land Rover'),
-    ('Lexus', 'Lexus'),
-    ('Lincoln', 'Lincoln'),
-    ('Lotus', 'Lotus'),
-    ('Maserati', 'Maserati'),
-    ('Mazda', 'Mazda'),
-    ('McLaren', 'McLaren'),
-    ('Mercedes-Benz', 'Mercedes-Benz'),
-    ('Mini', 'Mini'),
-    ('Mitsubishi', 'Mitsubishi'),
-    ('Nissan', 'Nissan'),
-    ('Pagani', 'Pagani'),
-    ('Porsche', 'Porsche'),
-    ('Ram', 'Ram'),
-    ('Rolls-Royce', 'Rolls-Royce'),
-    ('Subaru', 'Subaru'),
-    ('Tesla', 'Tesla'),
-    ('Toyota', 'Toyota'),
-    ('Volkswagen', 'Volkswagen'),
-    ('Volvo', 'Volvo')
-)
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
