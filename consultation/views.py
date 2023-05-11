@@ -35,6 +35,12 @@ class AddApplications(generic.CreateView):
     form_class = ApplicationForm
     success_url = reverse_lazy('consultation-list')
 
+    def dispatch(self, request, *args, **kwargs):
+        if Consultation.objects.filter(author=request.user).exists():
+            messages.error(request, "Sorry, you already submitted an application.")
+            return redirect('consultation-list')
+        return super().dispatch(request, *args, **kwargs)
+
     def form_valid(self, form):
         user = self.request.user
         form.instance.author = user

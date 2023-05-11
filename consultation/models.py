@@ -7,6 +7,7 @@ from django.core.validators import MaxValueValidator
 from cloudinary.models import CloudinaryField
 from phonenumber_field.modelfields import PhoneNumberField
 from consultation.cars import CAR_MAKER_CHOICES
+from django.core.exceptions import ValidationError
 
 
 STATUS = ((0, "Draft"), (1, "Published"))
@@ -37,5 +38,6 @@ class Consultation(models.Model):
         return f'Application by {self.author}.'
     
     def get_absolute_url(self):
-        return reverse('consultation-list', args={self.slug})
+        return reverse('consultation-list', args={self.author})
+
 

@@ -59,9 +59,9 @@
 <div class="d-flex text-center flex-wrap justify-content-center mt-3">
     {% for consultation in consultations %}
     {% if user.is_authenticated and consultation.author.id == user.id %}
-    <div class="card me-1 mb-4 text-start" style="width: 18rem;">
+    <div class="card me-1 mb-4 text-start border border-danger rounded-0" style="width: 18rem;">
         <ul class="list-group list-group-flush">
-            <li class="list-group-item border border-dark"><strong class="text-danger">Application Id:</strong>
+            <li class="list-group-item bg-danger text-white rounded-0"><strong>Application Id:</strong>
                 {{ consultation.id }}
             </li>
             <li class="list-group-item"><strong class="text-danger">Username:</strong> {{ consultation.author }}
@@ -79,9 +79,9 @@
                 {{ consultation.fav_maker }}</li>
             <li class="list-group-item"><strong class="text-danger">Purpose:</strong> {{ consultation.purpose }}</li>
         </ul>
-        <a href="{% url 'edit-application' consultation.pk %}" class="btn btn-outline-success rounded-0">Edit</a>
-        <button class="btn btn-outline-dark border border-danger m-1 rounded-0 float-end" data-bs-toggle="modal"
-            data-bs-target="#staticBackdrop"><strong class="text-danger">Delete Blog</strong></button>
+        <a href="{% url 'edit-application' consultation.pk %}" class="btn btn-outline-success border border-dark m-1 rounded-0 float-end"><i class="far fa-edit"></i> Edit Details</a>
+        <button class="btn btn-outline-dark border border-dark m-1 rounded-0 float-end" data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop"><strong class="text-danger"><i class="fas fa-minus-square"></i> Remove Application</strong></button>
 
         <!-- Remove Application Modal -->
         {% block remove_application %}
