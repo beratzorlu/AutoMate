@@ -32,7 +32,7 @@ class ApplicationForm(forms.ModelForm):
                 }),
             'phone': forms.NumberInput(attrs={
                 'class': 'mb-3 form-control',
-                'placeholder': '+3530001122'
+                'placeholder': '+353001112233'
                 }),
             'birthdate': forms.DateInput(attrs={
                 'placeholder': 'DD-MM-YYYY',

@@ -67,9 +67,15 @@ class RemoveApplications(generic.DeleteView):
     """
     Class-based view for deleting an existing consultation application
     """
+    
     model = Consultation
     template_name = 'consultation/remove_application.html'
     success_url = reverse_lazy('consultation-list')
+
+    def delete(self, request, *args, **kwargs):
+        obj = self.get_object()
+        messages.success(self.request, 'Your application ID: %(id)s has been successfully removed.' % obj.__dict__)
+        return super(RemoveApplications, self).delete(request, *args, **kwargs)
 
 
 class ConsultationDetailView(View):
