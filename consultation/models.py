@@ -23,7 +23,7 @@ class Consultation(models.Model):
     birthdate = models.DateField()
     phone = PhoneNumberField(null=False, blank=False, unique=False)
     fav_maker = models.CharField(
-        max_length=13, choices=CAR_MAKER_CHOICES, default='default')
+        max_length=16, choices=CAR_MAKER_CHOICES, default='default')
     budget = models.PositiveIntegerField(validators=[MaxValueValidator(999999)])
     purpose = models.CharField(max_length=200, unique=False)
     created_on = models.DateTimeField(auto_now_add=True)

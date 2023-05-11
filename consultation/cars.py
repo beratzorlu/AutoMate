@@ -1,5 +1,5 @@
 CAR_MAKER_CHOICES = (
-    ('default', 'Select Car Maker'),
+    ('Select Car Maker', 'Select Car Maker'),
     ('Acura', 'Acura'),
     ('Alfa Romeo', 'Alfa Romeo'),
     ('Aston Martin', 'Aston Martin'),
