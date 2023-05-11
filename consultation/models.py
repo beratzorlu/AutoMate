@@ -25,10 +25,10 @@ class Consultation(models.Model):
     fav_maker = models.CharField(
         max_length=16, choices=CAR_MAKER_CHOICES, default='default')
     budget = models.PositiveIntegerField(validators=[MaxValueValidator(999999)])
-    purpose = models.CharField(max_length=200, unique=False)
+    purpose = models.CharField(max_length=800, unique=False)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
-    status = models.IntegerField(choices=STATUS, default="0")
+    status = models.IntegerField(choices=STATUS, default="1")
     
     class Meta:
         ordering = ["-created_on"]

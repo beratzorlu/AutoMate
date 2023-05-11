@@ -1,5 +1,6 @@
 from .models import Consultation
 from crispy_forms.helper import FormHelper
+from django.forms.widgets import DateInput
 from django import forms
 
 
@@ -8,15 +9,9 @@ class ApplicationForm(forms.ModelForm):
     Defines the model for the application form
     """
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.fields['status'].disabled = True
-        if self.fields['status'].disabled:
-            self.fields['status'].default = 1
-
     class Meta:
         model = Consultation
-        fields = ('first_name', 'last_name', 'phone', 'birthdate', 'fav_maker', 'budget', 'purpose', 'status')
+        fields = ('first_name', 'last_name', 'phone', 'birthdate', 'fav_maker', 'budget', 'purpose')
         labels = {
             'first_name': 'First Name',
             'last_name': 'Last Name',
@@ -24,18 +19,37 @@ class ApplicationForm(forms.ModelForm):
             'author': 'Post Author',
             'birthdate': 'Date of Birth',
             'fav_maker': 'Favourite Car Maker',
-            'budget': 'Financial Budget',
+            'budget': 'Financial Budget (€)',
             'purpose': 'Purpose',
             'status': 'Post Status',
             }
         widgets = {
-            'first_name': forms.TextInput(attrs={'class': 'mb-3 form-control'}),
-            'last_name': forms.TextInput(attrs={'class': 'mb-3 form-control'}),
-            'phone': forms.NumberInput(attrs={'class': 'mb-3 form-control'}),
-            'birthdate': forms.DateInput(attrs={'class': 'mb-3 form-control'}),
-            'fav_maker': forms.Select(attrs={'class': 'mb-3 form-control'}),
-            'budget': forms.NumberInput(attrs={'class': 'mb-3 form-control'}),
-            'purpose': forms.TextInput(attrs={'class': 'mb-3 form-control'}),
+            'first_name': forms.TextInput(attrs={
+                'class': 'mb-3 form-control'
+                }),
+            'last_name': forms.TextInput(attrs={
+                'class': 'mb-3 form-control'
+                }),
+            'phone': forms.NumberInput(attrs={
+                'class': 'mb-3 form-control',
+                'placeholder': '+3530001122'
+                }),
+            'birthdate': forms.DateInput(attrs={
+                'placeholder': 'DD-MM-YYYY',
+                'class': 'mb-3 form-control',
+                'type': 'date',
+                }),
+            'fav_maker': forms.Select(attrs={
+                'class': 'mb-3 form-control'
+                }),
+            'budget': forms.NumberInput(attrs={
+                'class': 'mb-3 form-control',
+                'placeholder': 'e.g. 40000'
+                }),
+            'purpose': forms.TextInput(attrs={
+                'class': 'mb-3 form-control', 
+                'placeholder': 'e.g. Daily driver, family SUV'
+                }),
         }
 
 
