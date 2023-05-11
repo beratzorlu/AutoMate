@@ -57,6 +57,15 @@ class EditApplications(generic.UpdateView):
         return redirect(reverse("consultation-list"), pk=consultation.pk)
 
 
+class RemoveApplications(generic.DeleteView):
+    """
+    Class-based view for deleting an existing consultation application
+    """
+    model = Consultation
+    template_name = 'consultation/remove_application.html'
+    success_url = reverse_lazy('consultation-list')
+
+
 class ConsultationDetailView(View):
     """
     Class-based view of the post detail page

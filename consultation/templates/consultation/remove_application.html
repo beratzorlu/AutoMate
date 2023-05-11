@@ -1,0 +1,33 @@
+{% block remove_application %}
+
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1>Remove Application (ID: <strong class="text-danger">{{consultation.id}}</strong>)</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p class="fst-italic">
+                    Are you sure you want to remove your application <strong class="text-danger fw-bolder">{{ consultation.author }}</strong>?
+                </p>
+                <p class="fst-italic">
+                    <i class="fas fa-exclamation-circle"></i> Warning: Once deleted, your application will no longer be in consideration.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <form action="{% url 'remove-application' consultation.pk %}" method="POST">
+                    {% csrf_token %}
+                    <button type="button" class="btn btn-outline-dark rounded-0" data-bs-dismiss="modal">No, go
+                        back!</button>
+                    <button type="submit" class="btn btn-outline-danger rounded-0">Yes, delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

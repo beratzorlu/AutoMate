@@ -49,6 +49,7 @@
     </div>
 </div>
 
+<!-- Application Summary Cards -->
 <div class="text-center">
     <hr>
     {% if user.is_authenticated %}
@@ -60,7 +61,8 @@
     {% if user.is_authenticated and consultation.author.id == user.id %}
     <div class="card me-1 mb-4 text-start" style="width: 18rem;">
         <ul class="list-group list-group-flush">
-            <li class="list-group-item border border-dark"><strong class="text-danger">Application Id:</strong> {{ consultation.id }}
+            <li class="list-group-item border border-dark"><strong class="text-danger">Application Id:</strong>
+                {{ consultation.id }}
             </li>
             <li class="list-group-item"><strong class="text-danger">Username:</strong> {{ consultation.author }}
             </li>
@@ -78,28 +80,39 @@
             <li class="list-group-item"><strong class="text-danger">Purpose:</strong> {{ consultation.purpose }}</li>
         </ul>
         <a href="{% url 'edit-application' consultation.pk %}" class="btn btn-outline-success rounded-0">Edit</a>
-    {% endif %}
-    {% endfor %}
-    {% else %}
-</div>
-<div class="bg-dark text-white pt-4 pb-4 ps-3">
-    <h1>
-        How Does Consultation Work?
-    </h1>
-    <ol>
-        <li class="py-2">First, you fill up the application form provided on this page.</li>
-        <li class="pb-2">Once submitted, a member of our team will review your application.</li>
-        <li class="pb-2">After this process, your application will be transferred to one of our trained consultants.
-        </li>
-        <li class="pb-2">They will review the information you submitted, and they will contact you for a screening call.
-        </li>
-        <li class="pb-2">Service payment will be handled before the next step, after which your assigned consultant will
-            schedule a meeting with you.</li>
-        <li class="pb-2">Finally, you and your consultant will review your current financial situation and discuss the
-            best
-            course of action towards purchasing your first second-hand car.</li>
-        </ul>
-</div>
-{% endif %}
+        <button class="btn btn-outline-dark border border-danger m-1 rounded-0 float-end" data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop"><strong class="text-danger">Delete Blog</strong></button>
 
-{% endblock %}
+        <!-- Remove Application Modal -->
+        {% block remove_application %}
+        {% include 'consultation/remove_application.html' %}
+        {% endblock remove_application %}
+
+        {% endif %}
+        {% endfor %}
+        {% else %}
+    </div>
+    <div class="bg-dark text-white pt-4 pb-4 ps-3">
+        <h1>
+            How Does Consultation Work?
+        </h1>
+        <ol>
+            <li class="py-2">First, you fill up the application form provided on this page.</li>
+            <li class="pb-2">Once submitted, a member of our team will review your application.</li>
+            <li class="pb-2">After this process, your application will be transferred to one of our trained consultants.
+            </li>
+            <li class="pb-2">They will review the information you submitted, and they will contact you for a screening
+                call.
+            </li>
+            <li class="pb-2">Service payment will be handled before the next step, after which your assigned consultant
+                will
+                schedule a meeting with you.</li>
+            <li class="pb-2">Finally, you and your consultant will review your current financial situation and discuss
+                the
+                best
+                course of action towards purchasing your first second-hand car.</li>
+            </ul>
+    </div>
+    {% endif %}
+
+    {% endblock %}
