@@ -61,7 +61,7 @@
     {% if user.is_authenticated and consultation.author.id == user.id %}
     <div class="card me-1 mb-4 text-start border border-danger rounded-0" style="width: 18rem;">
         <ul class="list-group list-group-flush">
-            <li class="list-group-item bg-danger text-white rounded-0"><strong>Application Id:</strong>
+            <li class="list-group-item bg-danger text-white rounded-0"><strong>Application ID:</strong>
                 {{ consultation.id }}
             </li>
             <li class="list-group-item"><strong class="text-danger">Username:</strong> {{ consultation.author }}
