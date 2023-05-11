@@ -37,7 +37,7 @@ class AddApplications(generic.CreateView):
 
     def dispatch(self, request, *args, **kwargs):
         if Consultation.objects.filter(author=request.user).exists():
-            messages.error(request, "Sorry, you already submitted an application.")
+            messages.warning(request, "Sorry, you already submitted an application.")
             return redirect('consultation-list')
         return super().dispatch(request, *args, **kwargs)
 
