@@ -1,12 +1,12 @@
 from .models import Post, Comment
 from django.views import generic, View
-from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.urls import reverse_lazy
 from django.http import HttpResponseRedirect
 from django.contrib import messages
-from consultation.models import Consultation
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from consultation.models import Consultation
 from .forms import UserCommentForm, UserPostEditForm, UserAddPostForm
 
 
@@ -119,7 +119,7 @@ class UserPostEdit(LoginRequiredMixin, generic.UpdateView):
     model = Post
     template_name = 'edit_post.html'
     form_class = UserPostEditForm
-    success_url = reverse_lazy('consultation-list')
+    success_url = reverse_lazy('blog_list')
 
 
 class UserPostAdd(LoginRequiredMixin, generic.CreateView):

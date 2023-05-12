@@ -1,10 +1,11 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.http import HttpResponseRedirect
 from django.contrib import messages
-from .models import Consultation
-from .forms import ApplicationForm, EditApplicationForm
 from django.views import generic, View
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
+from .models import Consultation
+from .forms import ApplicationForm, EditApplicationForm
 
 # Create your views here.
 
@@ -26,7 +27,7 @@ class ConsultationList(generic.ListView):
         return context
 
 
-class AddApplications(generic.CreateView):
+class AddApplications(LoginRequiredMixin, generic.CreateView):
     """
     Class-based view for adding a new consultation application
     """
@@ -48,7 +49,7 @@ class AddApplications(generic.CreateView):
         return super(AddApplications, self).form_valid(form)
 
 
-class EditApplications(generic.UpdateView):
+class EditApplications(LoginRequiredMixin, generic.UpdateView):
     """
     Class-based view for editing an existing consultation application
     """
@@ -63,7 +64,7 @@ class EditApplications(generic.UpdateView):
         return redirect(reverse("consultation-list"), pk=consultation.pk)
 
 
-class RemoveApplications(generic.DeleteView):
+class RemoveApplications(LoginRequiredMixin, generic.DeleteView):
     """
     Class-based view for deleting an existing consultation application
     """
