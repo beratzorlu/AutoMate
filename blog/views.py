@@ -65,7 +65,7 @@ class DetailView(LoginRequiredMixin, View):
         user_comment_form = UserCommentForm(data=request.POST)
 
         if user_comment_form.is_valid():
-            user_comment_form.instance.email = request.user.email
+            user_comment_form.instance.author = self.request.user
             user_comment_form.instance.name = request.user.username
             comment = user_comment_form.save(commit=False)
             comment.post = post

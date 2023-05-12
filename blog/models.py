@@ -47,7 +47,6 @@ class Comment(models.Model):
     Defines the db models for comment posts.
     """
     name = models.CharField(max_length=32)
-    email = models.EmailField()
     post = models.ForeignKey(
         Post, on_delete=models.CASCADE, related_name='comments')
     author = models.ForeignKey(
