@@ -79,9 +79,12 @@
                 {{ consultation.fav_maker }}</li>
             <li class="list-group-item"><strong class="text-danger">Purpose:</strong> {{ consultation.purpose }}</li>
         </ul>
-        <a href="{% url 'edit-application' consultation.pk %}" class="btn btn-outline-success border border-dark m-1 rounded-0 float-end"><i class="far fa-edit"></i> Edit Details</a>
+        <a href="{% url 'edit-application' consultation.pk %}"
+            class="btn btn-outline-success border border-dark m-1 rounded-0 float-end"><i class="far fa-edit"></i> Edit
+            Details</a>
         <button class="btn btn-outline-dark border border-dark m-1 rounded-0 float-end" data-bs-toggle="modal"
-            data-bs-target="#staticBackdrop"><strong class="text-danger"><i class="fas fa-minus-square"></i> Remove Application</strong></button>
+            data-bs-target="#staticBackdrop"><strong class="text-danger"><i class="fas fa-minus-square"></i> Remove
+                Application</strong></button>
 
         <!-- Remove Application Modal -->
         {% block remove_application %}
@@ -105,23 +108,27 @@
             <ol>
                 <li class="py-2">First, you fill up the application form provided on this page.</li>
                 <li class="pb-2">Once submitted, a member of our team will review your application.</li>
-                <li class="pb-2">After this process, your application will be transferred to one of our trained consultants.
+                <li class="pb-2">After this process, your application will be transferred to one of our trained
+                    consultants.
                 </li>
-                <li class="pb-2">They will review the information you submitted, and they will contact you for a screening
+                <li class="pb-2">They will review the information you submitted, and they will contact you for a
+                    screening
                     call.
                 </li>
-                <li class="pb-2">Service payment will be handled before the next step, after which your assigned consultant
+                <li class="pb-2">Service payment will be handled before the next step, after which your assigned
+                    consultant
                     will
                     schedule a meeting with you.</li>
-                <li class="pb-2">Finally, you and your consultant will review your current financial situation and discuss
+                <li class="pb-2">Finally, you and your consultant will review your current financial situation and
+                    discuss
                     the
                     best
                     course of action towards purchasing your first second-hand car.</li>
                 </ul>
-            </div>
+        </div>
         <div class="card-header bg-danger rounded-0 border-top">
         </div>
-      </div>
+    </div>
 
     {% endif %}
 

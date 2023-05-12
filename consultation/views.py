@@ -36,6 +36,9 @@ class AddApplications(LoginRequiredMixin, generic.CreateView):
     form_class = ApplicationForm
     success_url = reverse_lazy('consultation-list')
 
+    def get_queryset(self, *args, **kwargs):
+        return Consultation.objects.filter(id=self.kwargs['pk'])
+
     def dispatch(self, request, *args, **kwargs):
         if Consultation.objects.filter(author=request.user).exists():
             messages.warning(request, "Sorry, you already submitted an application.")
@@ -57,6 +60,9 @@ class EditApplications(LoginRequiredMixin, generic.UpdateView):
     template_name = 'consultation/edit_application.html'
     form_class = EditApplicationForm
 
+    def get_queryset(self, *args, **kwargs):
+        return Consultation.objects.filter(id=self.kwargs['pk'])
+
     def form_valid(self, form):
         consultation = form.save(commit=False)
         consultation.save()
@@ -72,6 +78,9 @@ class RemoveApplications(LoginRequiredMixin, generic.DeleteView):
     model = Consultation
     template_name = 'consultation/remove_application.html'
     success_url = reverse_lazy('consultation-list')
+
+    def get_queryset(self, *args, **kwargs):
+        return Consultation.objects.filter(id=self.kwargs['pk'])
 
     def delete(self, request, *args, **kwargs):
         obj = self.get_object()
