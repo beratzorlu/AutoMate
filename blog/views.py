@@ -1,11 +1,13 @@
+from .models import Post, Comment
+from django.views import generic, View
 from django.shortcuts import render, get_object_or_404, reverse, redirect
+from django.urls import reverse_lazy
 from django.http import HttpResponseRedirect
 from django.contrib import messages
-from .models import Post, Comment
 from consultation.models import Consultation
-from django.views import generic, View
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import UserCommentForm, UserPostEditForm, UserAddPostForm
-from django.urls import reverse_lazy
 
 
 class PostList(generic.ListView):
@@ -28,7 +30,7 @@ class BlogList(generic.ListView):
     paginate_by = 8
 
 
-class DetailView(View):
+class DetailView(LoginRequiredMixin, View):
     """
     Class-based view of the post detail page
     """
@@ -85,7 +87,7 @@ class DetailView(View):
         )
 
 
-class UserPostLike(View):
+class UserPostLike(LoginRequiredMixin, View):
     """
     Class-based view for user likes on blog posts
     """
@@ -101,7 +103,7 @@ class UserPostLike(View):
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
-class UserPostDelete(generic.DeleteView):
+class UserPostDelete(LoginRequiredMixin, generic.DeleteView):
     """
     Class-based view for deleting blog posts
     """
@@ -110,7 +112,7 @@ class UserPostDelete(generic.DeleteView):
     success_url = reverse_lazy('blog_list')
 
 
-class UserPostEdit(generic.UpdateView):
+class UserPostEdit(LoginRequiredMixin, generic.UpdateView):
     """
     Class-based view for editing and updating blog posts.
     """
@@ -120,7 +122,7 @@ class UserPostEdit(generic.UpdateView):
     success_url = reverse_lazy('consultation-list')
 
 
-class UserPostAdd(generic.CreateView):
+class UserPostAdd(LoginRequiredMixin, generic.CreateView):
     """
     Class-based view for creating new blog posts.
     """
@@ -134,11 +136,12 @@ class UserPostAdd(generic.CreateView):
         return super(UserPostAdd, self).form_valid(form)
 
 
+@login_required
 def delete_comment(request, comment_id):
     """
     Function-based view for deleting comments.
     """
-    comment = get_object_or_404(Comment, id=comment_id)
+    comment = get_object_or_404(Comment, id=comment_id, author=request.user)
 
     if comment.name == request.user.username:
         comment.delete()
@@ -149,12 +152,13 @@ def delete_comment(request, comment_id):
         return redirect(request.META.get('HTTP_REFERER', reverse('home')))
 
 
+@login_required
 def edit_comment(request, comment_id):
     """
     Function-based view for editing comments.
     """
     template = "edit_comment.html"
-    comment = get_object_or_404(Comment, id=comment_id)
+    comment = get_object_or_404(Comment, id=comment_id, author=request.user)
     user_comment_form = UserCommentForm(request.POST or None, instance=comment)
 
     if request.method == "POST":

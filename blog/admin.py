@@ -24,9 +24,9 @@ class CommentAdmin(admin.ModelAdmin):
     Defines Comment model and CommentAdmin model.
     """
     actions = ['comment_approval']
-    list_display = ('name', 'body', 'post', 'created_on', 'approved')
-    list_filter = ('created_on', 'approved', 'post')
-    search_fields = ('name', 'email', 'body')
+    list_display = ('author', 'name', 'body', 'post', 'created_on', 'approved')
+    list_filter = ('author', 'created_on', 'approved', 'post')
+    search_fields = ('name', 'email', 'body', 'author__username', )
 
     def comment_approval(self, request, queryset):
         queryset.update(approved=True)
