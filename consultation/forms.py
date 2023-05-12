@@ -1,6 +1,8 @@
 from .models import Consultation
 from crispy_forms.helper import FormHelper
 from django.forms.widgets import DateInput
+from phonenumber_field.formfields import PhoneNumberField
+from phonenumber_field.widgets import PhoneNumberPrefixWidget
 from django import forms
 
 
@@ -8,6 +10,7 @@ class ApplicationForm(forms.ModelForm):
     """
     Defines the model for the application form
     """
+    phone = PhoneNumberField(widget=PhoneNumberPrefixWidget(initial='IE'))
 
     class Meta:
         model = Consultation
@@ -29,10 +32,6 @@ class ApplicationForm(forms.ModelForm):
                 }),
             'last_name': forms.TextInput(attrs={
                 'class': 'mb-3 form-control'
-                }),
-            'phone': forms.NumberInput(attrs={
-                'class': 'mb-3 form-control',
-                'placeholder': '+353001112233'
                 }),
             'birthdate': forms.DateInput(attrs={
                 'placeholder': 'DD-MM-YYYY',
@@ -59,8 +58,9 @@ class EditApplicationForm(forms.ModelForm):
     """
     class Meta:
         model = Consultation
-        fields = ('budget', 'purpose')
+        fields = ('budget', 'purpose', 'fav_maker')
         labels = {
             'budget': 'Budget',
             'purpose': 'Purpose',
+            'fav_maker': 'Favourite Car Maker',
             }

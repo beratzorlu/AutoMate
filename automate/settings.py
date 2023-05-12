@@ -56,8 +56,6 @@ INSTALLED_APPS = [
     'consultation',
 ]
 
-PHONENUMBER_DEFAULT_REGION = "IE"
-
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 SITE_ID = 1
