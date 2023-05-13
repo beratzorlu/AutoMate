@@ -3,16 +3,18 @@
 
 {% block content %}
 
-<h1 class="mt-2 text-center">Edit Post</h1>
+<div class="bg-danger text-center text-white pt-5 pb-5 mt-5 mb-5 border border-dark">
+   <h1>Edit Blog</h1>
+</div>
 
-<div class="text-center">
+<div class="text-center text-center d-flex justify-content-center bg-light pt-4 pb-4">
    <form action="{% url 'url_post_edit' post.slug %}" method="POST">
       {% csrf_token %}
-      {{ form.as_p }}
-   <button class="btn btn-outline-success rounded-0 m-3 border border-dark" type="submit">Submit
+      {{ form | crispy }}
+      <button class="btn btn-outline-success rounded-0 m-3 border border-dark" type="submit">Submit
          Changes</button>
    </form>
-</div>  
+</div>
 
 
 
