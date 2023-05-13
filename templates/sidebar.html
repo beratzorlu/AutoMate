@@ -4,12 +4,23 @@
     <div class="p-3 mb-3 bg-light rounded">
       <h4 class="font-italic">About <a href="" class="link-danger link-underline-opacity-0 link-underline-opacity-75-hover">{{ post.author }}</a></h4>
       <ul>
-        <li class="mb-0">Name: {{ consultations.first_name }}</li>
-        <li class="mb-0">Email:</li>
-        <li class="mb-0">Favourite Brand:</li>
-        <li class="mb-0">Favourite Car:</li>
+        {% if user.first_name == "" %}
+        <li class="mb-0">Name: -</li>
+        {% else %}
+        <li class="mb-0">Name: {{ user.first_name }}</li>
+        {% endif %}
+        {% if user.last_name == "" %}
+        <li class="mb-0">Surname: -</li>
+        {% else %}
+        <li class="mb-0">Surname: {{ user.last_name }}</li>
+        {% endif %}
+        {% if user.email == "" %}
+        <li class="mb-0">Email: -</li>
+        {% else %}
+        <li class="mb-0">Email: {{ user.email }}</li>
+        {% endif %}
+        <li class="mb-0">Member since <span class="fst-italic">{{ user.date_joined }}</span></li>
       </ul>
-      <a href="#" class="btn btn-dark rounded-0">Visit Profile</a>
     </div>
   </aside>
 

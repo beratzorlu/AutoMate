@@ -7,8 +7,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Consultation
 from .forms import ApplicationForm, EditApplicationForm
 
-# Create your views here.
-
 
 class ConsultationList(generic.ListView):
     """
