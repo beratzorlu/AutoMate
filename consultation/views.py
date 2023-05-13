@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, reverse, redirect
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponseForbidden
 from django.contrib import messages
 from django.views import generic, View
 from django.urls import reverse_lazy
@@ -16,7 +16,6 @@ class ConsultationList(generic.ListView):
     """
     model = Consultation
     template_name = 'consultation/consultation-list.html'
-    paginate_by = 6
 
     def get_queryset(self):
         return Consultation.objects.filter(status=1).order_by('-created_on')
@@ -60,14 +59,26 @@ class EditApplications(LoginRequiredMixin, generic.UpdateView):
     template_name = 'consultation/edit_application.html'
     form_class = EditApplicationForm
 
+    def get(self, request, *args, **kwargs):
+        consultation = self.get_object()
+        if self.request.user == consultation.author or self.request.user.is_superuser:
+            return super().get(request, *args, **kwargs)
+        else:
+            return HttpResponseForbidden()
+
     def get_queryset(self, *args, **kwargs):
         return Consultation.objects.filter(id=self.kwargs['pk'])
 
     def form_valid(self, form):
+        consultationObject = self.get_object()
         consultation = form.save(commit=False)
-        consultation.save()
-        messages.success(self.request, 'Success! Your changes to your application have been saved.')
-        return redirect(reverse("consultation-list"), pk=consultation.pk)
+        if self.request.user == consultation.author or self.request.user.is_superuser:
+            consultation.save()
+            messages.success(self.request, 'Success! Your changes to your application have been saved.')
+            return redirect(reverse("consultation-list"))
+        else:
+            messages.warning(self.request, 'You are not authorized to edit this page.')
+            return redirect(reverse("consultation-list"))
 
 
 class RemoveApplications(LoginRequiredMixin, generic.DeleteView):
@@ -79,13 +90,21 @@ class RemoveApplications(LoginRequiredMixin, generic.DeleteView):
     template_name = 'consultation/remove_application.html'
     success_url = reverse_lazy('consultation-list')
 
+    def test_func(self):
+        consultation = self.get_object()
+        return self.request.user == consultation.author or self.request.user.is_superuser
+
     def get_queryset(self, *args, **kwargs):
         return Consultation.objects.filter(id=self.kwargs['pk'])
 
     def delete(self, request, *args, **kwargs):
-        obj = self.get_object()
-        messages.success(self.request, 'Your application ID: %(id)s has been successfully removed.' % obj.__dict__)
-        return super(RemoveApplications, self).delete(request, *args, **kwargs)
+        consultation = self.get_object()
+        if self.request.user == consultation.author or self.request.user.is_superuser:
+            messages.success(self.request, 'Your application has been successfully removed.')
+            return super(RemoveApplications, self).delete(request, *args, **kwargs)
+        else:
+            messages.warning(self.request, 'You are not authorized to access this page.')
+            return HttpResponseForbidden()
 
 
 class ConsultationDetailView(View):
