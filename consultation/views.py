@@ -105,35 +105,3 @@ class RemoveApplications(LoginRequiredMixin, generic.DeleteView):
         else:
             messages.warning(self.request, 'You are not authorized to access this page.')
             return HttpResponseForbidden()
-
-
-class ConsultationDetailView(View):
-    """
-    Class-based view of the post detail page
-    """
-    def get(self, request, *args, **kwargs):
-        queryset = Consultation.objects.filter(status=1)
-        pk = self.kwargs.get('pk')
-        consultation = get_object_or_404(queryset, pk=pk)
-
-        return render(
-            request,
-            "consultation-list.html",
-            {
-                "consultation": consultation,
-            },
-        )
-
-    def post(self, request, *args, **kwargs):
-        queryset = Consultation.objects.filter(status=1)
-        pk = self.kwargs.get('pk')
-        consultation = get_object_or_404(queryset, pk=pk)
-
-        return render(
-            request,
-            "consultation-list.html",
-            {
-                "consultation": consultation,
-            },
-        )
-
