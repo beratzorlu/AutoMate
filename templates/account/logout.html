@@ -5,7 +5,7 @@
 {% block head_title %}{% trans "Log Out" %}{% endblock %}
 
 {% block content %}
-<div class="w-100 bg-danger p-4 border-dark border">
+<div class="w-100 bg-dark p-4 border-dark border">
   <div class="card text-center m-3 p-3 mx-auto rounded-0 border border-dark" style="max-width: 540px;">
     <h1>{% trans "Log Out" %}</h1>
 
@@ -19,7 +19,7 @@
       <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
       {% endif %}
       <hr>
-      <button type="submit" class="btn btn-outline-danger border border-danger text-center text-lg-start pt-2 rounded-0">{% trans 'Sign Out' %}</button>
+      <button type="submit" class="btn btn-outline-danger border border-danger text-center text-lg-start pt-2 rounded-0"><i class="fas fa-sign-out-alt"></i> {% trans 'Sign Out' %}</button>
     </form>
   </div>
 </div>

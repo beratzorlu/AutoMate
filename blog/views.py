@@ -97,8 +97,10 @@ class UserPostLike(LoginRequiredMixin, View):
 
         if post.likes.filter(id=request.user.id).exists():
             post.likes.remove(request.user)
+            messages.success(request, "Like removed.")
         else:
             post.likes.add(request.user)
+            messages.success(request, "Like added.")
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
@@ -111,6 +113,10 @@ class UserPostDelete(LoginRequiredMixin, generic.DeleteView):
     template_name = 'delete_post.html'
     success_url = reverse_lazy('blog_list')
 
+    def delete(self, request, *args, **kwargs):
+        messages.success(request, "You have successfully deleted your blog post.")
+        return super().delete(request, *args, **kwargs)
+
 
 class UserPostEdit(LoginRequiredMixin, generic.UpdateView):
     """
@@ -120,6 +126,10 @@ class UserPostEdit(LoginRequiredMixin, generic.UpdateView):
     template_name = 'edit_post.html'
     form_class = UserPostEditForm
     success_url = reverse_lazy('blog_list')
+
+    def form_valid(self, form):
+        messages.success(self.request, "Your changes have been successfully saved!")
+        return super().form_valid(form)
 
 
 class UserPostAdd(LoginRequiredMixin, generic.CreateView):
@@ -133,6 +143,7 @@ class UserPostAdd(LoginRequiredMixin, generic.CreateView):
     def form_valid(self, form):
         user = self.request.user
         form.instance.author = user
+        messages.success(self.request, "Your blog has been published.")
         return super(UserPostAdd, self).form_valid(form)
 
 
