@@ -17,7 +17,7 @@ class Post(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     excerpt = models.TextField(blank=True)
-    status = models.IntegerField(choices=STATUS, default=0)
+    status = models.IntegerField(choices=STATUS, default=1)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='blog_posts')
     featured_image = CloudinaryField('image', default='placeholder')
@@ -50,7 +50,7 @@ class Comment(models.Model):
     post = models.ForeignKey(
         Post, on_delete=models.CASCADE, related_name='comments')
     author = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name='comment_author')
+        User, on_delete=models.CASCADE, related_name='comment_author', )
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)

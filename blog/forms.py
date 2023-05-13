@@ -39,3 +39,4 @@ class UserAddPostForm(forms.ModelForm):
     class Meta:
         model = Post
         fields = ('title', 'excerpt', 'featured_image', 'status', 'content')
+

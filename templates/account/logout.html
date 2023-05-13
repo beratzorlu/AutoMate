@@ -2,20 +2,27 @@
 
 {% load i18n %}
 
-{% block head_title %}{% trans "Sign Out" %}{% endblock %}
+{% block head_title %}{% trans "Log Out" %}{% endblock %}
 
 {% block content %}
-<h1>{% trans "Sign Out" %}</h1>
+<div class="w-100 bg-danger p-4 border-dark border">
+  <div class="card text-center m-3 p-3 mx-auto rounded-0 border border-dark" style="max-width: 540px;">
+    <h1>{% trans "Log Out" %}</h1>
 
-<p>{% trans 'Are you sure you want to sign out?' %}</p>
+    <p>{% trans 'Are you sure you want to log out of your current account?' %}</p>
+    <p>{% trans 'Current Account:' %} <strong class="text-danger">{{ user.username }}</strong></p>
+    <p><i class="fas fa-car"></i></p>
 
-<form method="post" action="{% url 'account_logout' %}">
-  {% csrf_token %}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
-  {% endif %}
-  <button type="submit">{% trans 'Sign Out' %}</button>
-</form>
+    <form method="post" action="{% url 'account_logout' %}">
+      {% csrf_token %}
+      {% if redirect_field_value %}
+      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+      {% endif %}
+      <hr>
+      <button type="submit" class="btn btn-outline-danger border border-danger text-center text-lg-start pt-2 rounded-0">{% trans 'Sign Out' %}</button>
+    </form>
+  </div>
+</div>
 
 
 {% endblock %}
