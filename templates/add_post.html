@@ -1,14 +1,18 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags%}
 {% block content %}
 
-<h1 class="text-center" style="margin-top: 4rem; margin-bottom: 4rem;">Add Post</h1>
+<div class="bg-dark pt-4 pb-4 mb-4 border border-danger">
+    <h1 class="text-center text-white" style="margin-top: 4rem; margin-bottom: 4rem;">Add Post</h1>
+</div>
 
-<div class="text-center">
+<div class="text-center d-flex justify-content-center bg-light pt-4 pb-4">
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form.as_p }}
-    <button class="btn btn-outline-success border border-dark rounded-0">Publish Post</button>
+        {{ form | crispy }}
+        <button class="btn btn-outline-success border border-dark rounded-0">Publish Post</button>
     </form>
+</div>
 </div>
 
 {% endblock %}

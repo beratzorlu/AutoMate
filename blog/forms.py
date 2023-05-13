@@ -26,9 +26,9 @@ class UserPostEditForm(forms.ModelForm):
         fields = ('title', 'excerpt', 'content')
 
         widgets = {
-            'title': forms.TextInput(attrs={'class': ' form-control'}),
-            'excerpt': forms.TextInput(attrs={'class': 'form-control'}),
-            'content': forms.Textarea(attrs={'class': 'form-control'}),
+            'title': forms.TextInput(attrs={'class': 'mb-4 form-control'}),
+            'excerpt': forms.TextInput(attrs={'class': 'mb-4 form-control'}),
+            'content': forms.Textarea(attrs={'class': 'mb-4 form-control'}),
         }
 
 
@@ -40,3 +40,8 @@ class UserAddPostForm(forms.ModelForm):
         model = Post
         fields = ('title', 'excerpt', 'featured_image', 'content')
 
+        widgets = {
+            'title': forms.TextInput(attrs={'class': 'mb-4 form-control'}),
+            'excerpt': forms.TextInput(attrs={'class': 'mb-4 form-control'}),
+            'content': forms.Textarea(attrs={'class': 'mb-4 form-control'}),
+        }
