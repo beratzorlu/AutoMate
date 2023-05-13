@@ -1,7 +1,7 @@
 from .models import Post, Comment
 from django.views import generic, View
 from django.urls import reverse_lazy
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponseForbidden
 from django.contrib import messages
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.contrib.auth.decorators import login_required
@@ -113,9 +113,21 @@ class UserPostDelete(LoginRequiredMixin, generic.DeleteView):
     template_name = 'delete_post.html'
     success_url = reverse_lazy('blog_list')
 
+    def test_func(self):
+        post = self.get_object()
+        return self.request.user == post.author or self.request.user.is_superuser
+
+    def get_queryset(self, *args, **kwargs):
+        return Post.objects.filter(status=1)
+
     def delete(self, request, *args, **kwargs):
-        messages.success(request, "You have successfully deleted your blog post.")
-        return super().delete(request, *args, **kwargs)
+        post = self.get_object()
+        if self.request.user == post.author or self.request.user.is_superuser:
+            messages.success(self.request, 'Your blog has been successfully removed.')
+            return super(UserPostDelete, self).delete(request, *args, **kwargs)
+        else:
+            messages.warning(self.request, 'You are not authorized to delete posts of other users.')
+            return HttpResponseForbidden()
 
 
 class UserPostEdit(LoginRequiredMixin, generic.UpdateView):
@@ -127,9 +139,30 @@ class UserPostEdit(LoginRequiredMixin, generic.UpdateView):
     form_class = UserPostEditForm
     success_url = reverse_lazy('blog_list')
 
+    # def form_valid(self, form):
+    #     messages.success(self.request, "Your changes have been successfully saved!")
+    #     return super().form_valid(form)
+    
+    def get(self, request, *args, **kwargs):
+        post = self.get_object()
+        if self.request.user == post.author or self.request.user.is_superuser:
+            return super().get(request, *args, **kwargs)
+        else:
+            return HttpResponseForbidden()
+
+    def get_queryset(self, *args, **kwargs):
+        return Post.objects.filter(status=1)
+
     def form_valid(self, form):
-        messages.success(self.request, "Your changes have been successfully saved!")
-        return super().form_valid(form)
+        blogObject = self.get_object()
+        post = form.save(commit=False)
+        if self.request.user == post.author or self.request.user.is_superuser:
+            post.save()
+            messages.success(self.request, 'Success! Your changes have been saved.')
+            return redirect(reverse("blog_list"))
+        else:
+            messages.warning(self.request, 'You are not authorized to edit the posts of other users.')
+            return redirect(reverse("home"))
 
 
 class UserPostAdd(LoginRequiredMixin, generic.CreateView):
@@ -143,8 +176,12 @@ class UserPostAdd(LoginRequiredMixin, generic.CreateView):
     def form_valid(self, form):
         user = self.request.user
         form.instance.author = user
-        messages.success(self.request, "Your blog has been published.")
-        return super(UserPostAdd, self).form_valid(form)
+        if user.is_authenticated or user.is_superuser:
+            messages.success(self.request, "Your blog has been published!")
+            return super(UserPostAdd, self).form_valid(form)
+        else:
+            messages.warning(self.request, "Only authorized users can publish content!")
+            return HttpResponseRedirect(reverse('blog_list'))
 
 
 @login_required
