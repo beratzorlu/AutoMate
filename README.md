@@ -96,10 +96,9 @@ Developer
 ### Colour Palette
 
 
-[Coolors](https://coolors.co/) was a highly beneficial resource in this regard which provided significant help in identifying
-matching colours that also have appropriate contrast.
+[Coolors](https://coolors.co/) was a highly beneficial resource that provided significant help in identifying matching colours that also have appropriate contrast.
 
-![Colour Palette]()
+![Colour Palette](docs/color-palette.png)
 
 ---
 
@@ -214,10 +213,11 @@ matching colours that also have appropriate contrast.
 
 ## Technical Design
 
-### Flowchart
-![]()
+### Data Model - Entity Relationship Diagram
 
-### Data Model
+[Draw.io](https://www.drawio.com/) was a highly beneficial resource that provided significant help in building a ERP to illustrate the various table relationships of data models present in the project.
+
+![Data Relationship Diagram](docs/entity-relationship-diagram.png)
 
 
 ---
