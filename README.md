@@ -17,8 +17,8 @@
 -   [The Story](#the-story)
 -   [User Experience (UX)](#user-experience-ux)
     -   [Target Audiance](#target-audiance)
-    -   [Objectives](#objectives)
     -   [User Stories](#user-stories)
+    -   [Typography][#typography]
     -   [Colour Palette](#colour-palette)
     -   [Wireframes](#wireframes)
 
@@ -73,15 +73,6 @@
 
 This project targets the general audiance inclusive of all ages. It is reccomended that the players have at least a good comprehension of the English language and are familiar with quiz games.
 
-### Objectives
-
-User Objectives
-
-- 
-
-Developer Objectives
-
-- 
 
 ### User Stories
 
@@ -92,6 +83,16 @@ User
 Developer
 
 -   
+
+
+### Typography
+
+- [Bitter](https://fonts.google.com/specimen/Bitter) is the primary font that is present across all textual elements present in the project.
+
+- [Sans Serif](https://fonts.google.com/knowledge/glossary/sans_serif) is the fallback font set in case the primary font fails.
+
+- [Font Awesome](https://fontawesome.com) is the source for the various icons used to decorate the textual content available in the project.
+
 
 ### Colour Palette
 
@@ -218,7 +219,6 @@ Developer
 [Draw.io](https://www.drawio.com/) was a highly beneficial resource that provided significant help in building a ERP to illustrate the various table relationships of data models present in the project.
 
 ![Data Relationship Diagram](docs/entity-relationship-diagram.png)
-
 
 ---
 
