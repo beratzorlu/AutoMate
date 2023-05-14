@@ -112,6 +112,12 @@ matching colours that also have appropriate contrast.
 #### Mobile
 ![screenshot](docs/wireframes/ios-home.png)
 
+#### Tablet
+![screenshot](docs/wireframes/ipad-home.png)
+
+#### Desktop
+![screenshot](docs/wireframes/desktop-home.png)
+
 </details>
 
 <details>
@@ -120,6 +126,12 @@ matching colours that also have appropriate contrast.
 
 #### Mobile
 ![screenshot](docs/wireframes/ios-blog.png)
+
+#### Tablet
+![screenshot](docs/wireframes/ipad-blog.png)
+
+#### Desktop
+![screenshot](docs/wireframes/desktop-blog.png)
 
 </details>
 
@@ -130,6 +142,12 @@ matching colours that also have appropriate contrast.
 #### Mobile
 ![screenshot](docs/wireframes/ios-consultation.png)
 
+#### Tablet
+![screenshot](docs/wireframes/ipad-consultation.png)
+
+#### Desktop
+![screenshot](docs/wireframes/desktop-consultation.png)
+
 </details>
 
 <details>
@@ -138,6 +156,12 @@ matching colours that also have appropriate contrast.
 
 #### Mobile
 ![screenshot](docs/wireframes/ios-forms.png)
+
+#### Tablet
+![screenshot](docs/wireframes/ipad-forms.png)
+
+#### Desktop
+![screenshot](docs/wireframes/desktop-forms.png)
 
 </details>
 
@@ -148,6 +172,12 @@ matching colours that also have appropriate contrast.
 #### Mobile
 ![screenshot](docs/wireframes/ios-login.png)
 
+#### Tablet
+![screenshot](docs/wireframes/ipad-login.png)
+
+#### Desktop
+![screenshot](docs/wireframes/desktop-login.png)
+
 </details>
 
 <details>
@@ -157,6 +187,12 @@ matching colours that also have appropriate contrast.
 #### Mobile
 ![screenshot](docs/wireframes/ios-signout.png)
 
+#### Tablet
+![screenshot](docs/wireframes/ipad-signout.png)
+
+#### Desktop
+![screenshot](docs/wireframes/desktop-signout.png)
+
 </details>
 
 <details>
@@ -165,6 +201,12 @@ matching colours that also have appropriate contrast.
 
 #### Mobile
 ![screenshot](docs/wireframes/ios-blog-detail.png)
+
+#### Tablet
+![screenshot](docs/wireframes/ipad-detail.png)
+
+#### Desktop
+![screenshot](docs/wireframes/desktop-detail.png)
 
 </details>
 
