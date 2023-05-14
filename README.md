@@ -71,7 +71,7 @@
 
 ### Target Audiance
 
-This project targets the general audiance inclusive of all ages. It is reccomended that the players have at least a good comprehension of the English language and are familiar with quiz games.
+This project targets the general audiance inclusive of all ages. It is tailored towards a base of interest towards Irish youths who have recently acquired their full driving license and are in the market to purchase their first second-hand car.
 
 
 ### User Stories
@@ -96,8 +96,9 @@ Developer
 
 ### Colour Palette
 
-
 [Coolors](https://coolors.co/) was a highly beneficial resource that provided significant help in identifying matching colours that also have appropriate contrast.
+
+More importantly, this colour combination consists of items designed to motivate excitement from users through the use of vivid colour tones contrasted by darker colours to balance the overall feel of the design.
 
 ![Colour Palette](docs/color-palette.png)
 
