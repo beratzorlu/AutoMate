@@ -52,8 +52,8 @@ class TestViews(TestCase):
 class TestUserCommentForm(TestCase):
     def test_user_comment_input_is_required(self):
         """
-        Tests if the required restriction
-        for comment form behaves as expected.
+        Tests if the required restriction for comment form 
+        behaves as expected.
         """
         form = UserCommentForm({'body': ''})
         self.assertFalse(form.is_valid())
@@ -64,8 +64,8 @@ class TestUserCommentForm(TestCase):
 class TestUserAddPostForm(TestCase):
     def test_add_post_input_is_required(self):
         """
-        Tests if the required restriction
-        for add post form behaves as expected.
+        Tests if the required restriction for add post form 
+        behaves as expected.
         """
         form = UserAddPostForm({'title': ''}, )
         self.assertFalse(form.is_valid())
