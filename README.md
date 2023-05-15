@@ -14,11 +14,10 @@
 
 ## Table of Contents
 
--   [The Story](#the-story)
 -   [User Experience (UX)](#user-experience-ux)
     -   [Target Audiance](#target-audiance)
     -   [User Stories](#user-stories)
-    -   [Typography][#typography]
+    -   [Typography](#typography)
     -   [Colour Palette](#colour-palette)
     -   [Wireframes](#wireframes)
 
@@ -62,11 +61,6 @@
 
 ---
 
-## The Story
-
-
----
-
 ## User Experience (UX)
 
 ### Target Audiance
@@ -76,13 +70,88 @@ This project targets the general audiance inclusive of all ages. It is tailored 
 
 ### User Stories
 
-User
+#### User
 
--   
+`(MUST HAVE)`
 
-Developer
+- As a user I can view a contact us page that presents correspondence information so that I can contact the company for my queries.
+- As a registered user I can edit the comments I posted so that I can change the content I originally posted in my comment.
+- As a registered user I can click on a clearly labelled button so that I can add a post without having to navigate the site too much. 
+- As a registered user I can use a dedicated form to edit my blog so that I can make changes to my content when I feel there is a need to do so.
+- As a user I can click on a clearly labelled button on a blog card so that I am easily directed to the details of the relevant full blog post.
+- As a user I can view all the newest posts on the website so that I can directly access the most up-to-date content available on the website.
+- As a user I can view a paginated list of posts so that I easily select a post to view.
+- As an unregistered user I can use a password and username I choose so that I can securely access the user-exclusive features of the website.
+- As an unregistered user I can easily understand the features and purpose statement of the website on an initial look so that I more easily make a decision whether I am interested in creating an account or not.
+- As an unregistered I can sign up to create an account so that I can fully access the features available on the website.
+- As a registered user I can log out of my account so that I can securely quit the current session active on my device.
+- As a registered user I can log in to my account so that I access the full functionality of the website.
+- As a registered user I can delete my posts so that my published content is removed.
+- As a registered user I can view posts from other users so that I can access and read content posted by others.
+- As a registered user I can navigate the site so that I can interact with the available features.
+- As a registered user I can create new posts so that I can share my thoughts and opinions on the platform.
+- As a user I can view the consultation page so that I can learn about the various consultation service that the site offers.
+- As a registered user I can expand posts so that more information is available to me to help me engage with the post.
+- As a registered I can remove comments that I posted so that they are no longer visible on the site.
+- As a registered I can leave comments on other users' blog posts so that I share my thoughts on the content they have posted.
+- As a registered user I can like other people's posts so that I inform them that I had a positive experience with their posts.
 
--   
+`(SHOULD HAVE)`
+
+- As a user I can be directed to an error page so that I know something went wrong with the website.
+- As an admin I can view all submitted blog posts in the backend so that I can reject or approve posts depending on their compliance with community guidelines.
+- As a user I can easily see how many comments a post accumulated without clicking into it so that I can decide whether it's worth checking out.
+- As a user I can see special styling for particular usernames in comments so that I can identify which users are admins.
+- As a user I can browse a website that incorporates overall cohesion among its various elements so that I have an aesthetically pleasing user experience.
+- As a user I can browse profiles of cars on the website so that I can leave a comment to share my thoughts and experience relevant to a model that I choose.
+- As a registered user I can like a post without having to wait for the website to refresh so that I can have a more cohesive and smooth experience when interacting with posts.
+- As a user I can view the number of comments on any post so that I see if the post is popular or not and decide if it's worth checking out based on this information.
+- As an unregistered user I can use single sign-on capabilities so that have a smoother authentication process before I can access the features of the site.
+- As a registered user I want to be able to be notified if I do something wrong while creating a comment so that I can make sure that everything is as expected before I can publish my content.
+- As a registered user I can make my profile private so that my personal information is reserved for specific people that I feel comfortable with sharing such information
+- As a registered user I can clearly see date/time information on a post so that I learn how old or new the post is to determine its relevance.
+
+`(COULD HAVE)`
+
+- As a user I can use the calculator functionality so that I get a rough idea about whether it's viable for me to finance a car purchase.
+- As a user I can view the location of the HQ of the site so that I decide if I want to have a visit for networking.
+- As a registered user I can message other users so that I can establish private communication with other users on the site.
+- As a registered I can receive notifications when I get new followers so that I can check their profile.
+- As a registered user I can receive notifications about any new likes and comments on my content so that I am informed of the engagement of my posts.
+- As a registered user I can search for any user or post so that I can easily find the content and people that I am interested in.
+
+`(WON'T HAVE)`
+
+- As a registered user I can be notified of incoming correspondence from other users so that I can read their messages and decide if I want to reply back to them.
+- As a registered user I can create my profile so that other users can identify me.
+- As a registered user I can reset my password so that I can regain access to my account if I forget my password.
+- As a registered user I can add a profile picture and cover photo so that I can further personalize my profile.
+- As a registered user I can edit my profile so that I can personalize my profile.
+- As a registered user I can follow other users so that I can see their blog posts.
+- As a registered user I can unfollow users so that their posts are no longer visible on my feed.
+
+
+#### Admin
+
+`(MUST HAVE)`
+
+
+- As an admin I can provide a disclaimer at the bottom of the page so that I can specify that all outsourced content (texts, images etc.) is used for purposes of education as a part of this academic project and is in no circumstance to be used for commercial motivations. 
+- Deploy project to Heroku before the start of the production process to prevent major issues in this area considering later stages.
+- As an admin I can approve or reject comments left by registered users so that I can ensure that the content available on the site follows the community guidelines.
+- As an admin I can create draft posts so that I can come back to them when I want to.
+- As an admin I can create, read, update and delete posts so that *I can manage my blog content.
+
+
+`(SHOULD HAVE)`
+
+
+- As an admin I can suspend a user's access to site functionality if required so that I can prevent them from violating any major community guidelines and ensure a safe space for the site's users.
+
+`(COULD HAVE)`
+
+- As an admin I can view all reported content by users so that I can make decisions on whether content removal and user punishment are necessary or not.
+- As a registered user I can report posts that I find inappropriate in terms of site community guidelines so that such content is communicated to admins and appropriate measures are taken, ensuring an overall positive experience on the site.
 
 
 ### Typography
