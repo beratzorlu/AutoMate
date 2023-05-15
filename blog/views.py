@@ -70,7 +70,7 @@ class DetailView(LoginRequiredMixin, View):
             comment = user_comment_form.save(commit=False)
             comment.post = post
             comment.save()
-            messages.success(request, "Success! Your comment has been submitted and waiting admin approval.")
+            messages.success(request, "Success! Your comment has been submitted and waiting admin approval.")  # noqa
         else:
             user_comment_form = UserCommentForm()
 
@@ -115,7 +115,7 @@ class UserPostDelete(LoginRequiredMixin, generic.DeleteView):
 
     def test_func(self):
         post = self.get_object()
-        return self.request.user == post.author or self.request.user.is_superuser
+        return self.request.user == post.author or self.request.user.is_superuser  # noqa
 
     def get_queryset(self, *args, **kwargs):
         return Post.objects.filter(status=1)
@@ -123,10 +123,10 @@ class UserPostDelete(LoginRequiredMixin, generic.DeleteView):
     def delete(self, request, *args, **kwargs):
         post = self.get_object()
         if self.request.user == post.author or self.request.user.is_superuser:
-            messages.success(self.request, 'Your blog has been successfully removed.')
+            messages.success(self.request, 'Your blog has been successfully removed.')  # noqa
             return super(UserPostDelete, self).delete(request, *args, **kwargs)
         else:
-            messages.warning(self.request, 'You are not authorized to delete posts of other users.')
+            messages.warning(self.request, 'You are not authorized to delete posts of other users.')  # noqa
             return HttpResponseForbidden()
 
 
@@ -139,10 +139,6 @@ class UserPostEdit(LoginRequiredMixin, generic.UpdateView):
     form_class = UserPostEditForm
     success_url = reverse_lazy('blog_list')
 
-    # def form_valid(self, form):
-    #     messages.success(self.request, "Your changes have been successfully saved!")
-    #     return super().form_valid(form)
-    
     def get(self, request, *args, **kwargs):
         post = self.get_object()
         if self.request.user == post.author or self.request.user.is_superuser:
@@ -158,10 +154,10 @@ class UserPostEdit(LoginRequiredMixin, generic.UpdateView):
         post = form.save(commit=False)
         if self.request.user == post.author or self.request.user.is_superuser:
             post.save()
-            messages.success(self.request, 'Success! Your changes have been saved.')
+            messages.success(self.request, 'Success! Your changes have been saved.')  # noqa
             return redirect(reverse("blog_list"))
         else:
-            messages.warning(self.request, 'You are not authorized to edit the posts of other users.')
+            messages.warning(self.request, 'You are not authorized to edit the posts of other users.')  # noqa
             return redirect(reverse("home"))
 
 
@@ -180,7 +176,7 @@ class UserPostAdd(LoginRequiredMixin, generic.CreateView):
             messages.success(self.request, "Your blog has been published!")
             return super(UserPostAdd, self).form_valid(form)
         else:
-            messages.warning(self.request, "Only authorized users can publish content!")
+            messages.warning(self.request, "Only authorized users can publish content!")  # noqa
             return HttpResponseRedirect(reverse('blog_list'))
 
 
@@ -196,7 +192,7 @@ def delete_comment(request, comment_id):
         messages.success(request, "Your comment has been deleted.")
         return redirect(reverse("post_detail", args=[comment.post.slug]))
     else:
-        messages.error(request, "You are not authorized to delete this comment.")
+        messages.error(request, "You are not authorized to delete this comment.")  # noqa
         return redirect(request.META.get('HTTP_REFERER', reverse('home')))
 
 
@@ -214,12 +210,11 @@ def edit_comment(request, comment_id):
             user_comment_form.save()
             messages.success(request, "Successfully saved your changes.")
             return redirect(reverse("post_detail", args=[comment.post.slug]))
-        messages.error(request, "Sorry, something went wrong. Please try again.")
-    
+        messages.error(request, "Sorry, something went wrong. Please try again.")  # noqa
+
     context = {
         "comment": comment,
         "user_comment_form": user_comment_form,
     }
 
     return render(request, template, context)
-    

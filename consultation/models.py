@@ -20,24 +20,22 @@ class Consultation(models.Model):
     first_name = models.CharField(max_length=200, unique=False)
     last_name = models.CharField(max_length=200, unique=False)
     author = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="consultation_application")
+        User, on_delete=models.CASCADE, related_name="consultation_application")  # noqa
     birthdate = models.DateField()
     phone = PhoneNumberField(null=False, blank=False, unique=False)
     fav_maker = models.CharField(
         max_length=16, choices=CAR_MAKER_CHOICES, default='default')
-    budget = models.PositiveIntegerField(validators=[MaxValueValidator(999999)])
+    budget = models.PositiveIntegerField(validators=[MaxValueValidator(999999)])  # noqa
     purpose = models.CharField(max_length=800, unique=False)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=STATUS, default="1")
-    
+
     class Meta:
         ordering = ["-created_on"]
 
     def __str__(self):
         return f'Application by {self.author}.'
-    
+
     def get_absolute_url(self):
         return reverse('consultation-list', args={self.author})
-
-

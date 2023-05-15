@@ -14,7 +14,7 @@ class ApplicationForm(forms.ModelForm):
 
     class Meta:
         model = Consultation
-        fields = ('first_name', 'last_name', 'phone', 'birthdate', 'fav_maker', 'budget', 'purpose')
+        fields = ('first_name', 'last_name', 'phone', 'birthdate', 'fav_maker', 'budget', 'purpose')  # noqa
         labels = {
             'first_name': 'First Name',
             'last_name': 'Last Name',
@@ -46,7 +46,7 @@ class ApplicationForm(forms.ModelForm):
                 'placeholder': 'e.g. 40000'
                 }),
             'purpose': forms.TextInput(attrs={
-                'class': 'mb-3 form-control', 
+                'class': 'mb-3 form-control',
                 'placeholder': 'e.g. Daily driver, family SUV'
                 }),
         }

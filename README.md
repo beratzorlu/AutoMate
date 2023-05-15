@@ -31,9 +31,15 @@
 -   [Future Features](#future-features) 
 
 -   [Testing](#testing)
-    -   [Manual Testing](#manual-testing) 
+    -   [Manual Testing](#manual-testing)
+        -   [User Stories Testing](#user-stories-testing)
+    -   [Automated Testing](#automated-tests)
+        -   [Unit Tests](#unit-tests)
 
 -   [Validation](#validation)
+    -   [HTML](#html)
+    -   [CSS](#css)
+    -   [JavaScript](#javascript)
     -   [Python](#python)
 
 -   [Bug Fixes](#bug-fixes)
@@ -313,11 +319,19 @@ The below elements are available to be experienced by the user across the quiz g
 
 ---
 
-## Testing 
+## Testing
+
+### Automated Testing
+
+#### Unit Tests
+
+| Scope | Screenshot | Result |
+| --- | --- | --- |
+| Global | ![screenshot](docs/validation/python/unittest.png) | Pass |
 
 ### Manual Testing
 
-<summary>User Stories Testing</summary>
+#### User Stories Testing
 
 1. 
 
@@ -330,20 +344,58 @@ The below elements are available to be experienced by the user across the quiz g
 </details>
 
 
+
 ---
 
 ## Validation
 
 ### HTML
 
-| Page | W3C | Screenshot | Result |
-| --- | --- | --- | --- |
-| Home | [W3C]() | ![screenshot]() |  |
+| Page | Screenshot | Result |
+| --- | --- | --- |
+| Home | ![screenshot](docs/validation/html/w3c-index.png) | Pass |
+| Blog | ![screenshot](docs/validation/html/w3c-blog.png) | Pass |
+| Consultation | ![screenshot](docs/validation/html/w3c-apply.png) | Pass |
+| Login | ![screenshot](docs/validation/html/w3c-login.png) | Pass |
+| Logout | ![screenshot](docs/validation/html/w3c-logout.png) | Pass |
+| Signup | ![screenshot](docs/validation/html/w3c-signup.png) | Pass |
+| Add Post | ![screenshot](docs/validation/html/w3c-add-post.png) | Pass |
+| Edit Post | ![screenshot](docs/validation/html/w3c-edit-post.png) | Pass |
+| Add Consultation | ![screenshot](docs/validation/html/w3c-add-app.png) | 1 Error: Caused by widget properties set for the DateTimeField. This input field needs a placeholder, thus the error is allowed to remain. |
+| Edit Consultation | ![screenshot](docs/validation/html/w3c-edit-app.png) | Pass |
+
+### CSS
+
+| File | Screenshot | Result |
+| --- | --- | --- |
+| style.css | ![screenshot](docs/validation/css/jigsaw-css.png) | Pass |
+
+### JavaScript
+
+| File | Screenshot | Result |
+| --- | --- | --- |
+| fade.js | ![screenshot](docs/validation/js/jshint.png) | Pass (It is not possible to install Bootstrap in jshint, thus the warning is allowed to remain.) |
 
 ### PYTHON
 
+| File | Screenshot | Result |
+| --- | --- | --- |
+| urls.py (main) | ![screenshot](docs/validation/python/linter-urls-main.png) | Pass |
+| settings.py (main) | ![screenshot](docs/validation/python/linter-settings.png) | Pass |
+| admin.py (blog) | ![screenshot](docs/validation/python/linter-admin-blog.png) | Pass |
+| forms.py (blog) | ![screenshot](docs/validation/python/linter-forms-blog.png) | Pass |
+| tests.py (blog) | ![screenshot](docs/validation/python/linter-tests-blog.png) | Pass |
+| urls.py (blog) | ![screenshot](docs/validation/python/linter-urls-blog.png) | Pass |
+| views.py (blog) | ![screenshot](docs/validation/python/linter-views-blog.png) | Pass |
+| admin.py (consultation) | ![screenshot](docs/validation/python/linter-admin-consultation.png) | Pass |
+| cars.py (consultation) | ![screenshot](docs/validation/python/linter-cars-consultation.png) | Pass |
+| forms.py (consultation) | ![screenshot](docs/validation/python/linter-forms-consultation.png) | Pass |
+| models.py (consultation) | ![screenshot](docs/validation/python/linter-models-consultation.png) | Pass |
+| tests.py (consultation) | ![screenshot](docs/validation/python/linter-tests-consultation.png) | Pass |
+| urls.py (consultation) | ![screenshot](docs/validation/python/linter-urls-consultation.png) | Pass |
+| views.py (consultation) | ![screenshot](docs/validation/python/linter-views-consultation.png) | Pass |
 
----    
+---
 
 ## Bug Fixes
 

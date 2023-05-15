@@ -38,14 +38,14 @@ class AddApplications(LoginRequiredMixin, generic.CreateView):
 
     def dispatch(self, request, *args, **kwargs):
         if Consultation.objects.filter(author=request.user).exists():
-            messages.warning(request, "Sorry, you already submitted an application.")
+            messages.warning(request, "Sorry, you already submitted an application.")  # noqa
             return redirect('consultation-list')
         return super().dispatch(request, *args, **kwargs)
 
     def form_valid(self, form):
         user = self.request.user
         form.instance.author = user
-        messages.success(self.request, 'Success! Your application has been submitted.')
+        messages.success(self.request, 'Success! Your application has been submitted.')  # noqa
         return super(AddApplications, self).form_valid(form)
 
 
@@ -59,7 +59,7 @@ class EditApplications(LoginRequiredMixin, generic.UpdateView):
 
     def get(self, request, *args, **kwargs):
         consultation = self.get_object()
-        if self.request.user == consultation.author or self.request.user.is_superuser:
+        if self.request.user == consultation.author or self.request.user.is_superuser:  # noqa
             return super().get(request, *args, **kwargs)
         else:
             return HttpResponseForbidden()
@@ -70,12 +70,12 @@ class EditApplications(LoginRequiredMixin, generic.UpdateView):
     def form_valid(self, form):
         consultationObject = self.get_object()
         consultation = form.save(commit=False)
-        if self.request.user == consultation.author or self.request.user.is_superuser:
+        if self.request.user == consultation.author or self.request.user.is_superuser:  # noqa
             consultation.save()
-            messages.success(self.request, 'Success! Your changes to your application have been saved.')
+            messages.success(self.request, 'Success! Your changes to your application have been saved.')  # noqa
             return redirect(reverse("consultation-list"))
         else:
-            messages.warning(self.request, 'You are not authorized to edit this page.')
+            messages.warning(self.request, 'You are not authorized to edit this page.')  # noqa
             return redirect(reverse("consultation-list"))
 
 
@@ -83,23 +83,23 @@ class RemoveApplications(LoginRequiredMixin, generic.DeleteView):
     """
     Class-based view for deleting an existing consultation application
     """
-    
+
     model = Consultation
     template_name = 'consultation/remove_application.html'
     success_url = reverse_lazy('consultation-list')
 
     def test_func(self):
         consultation = self.get_object()
-        return self.request.user == consultation.author or self.request.user.is_superuser
+        return self.request.user == consultation.author or self.request.user.is_superuser  # noqa
 
     def get_queryset(self, *args, **kwargs):
         return Consultation.objects.filter(id=self.kwargs['pk'])
 
     def delete(self, request, *args, **kwargs):
         consultation = self.get_object()
-        if self.request.user == consultation.author or self.request.user.is_superuser:
-            messages.success(self.request, 'Your application has been successfully removed.')
-            return super(RemoveApplications, self).delete(request, *args, **kwargs)
+        if self.request.user == consultation.author or self.request.user.is_superuser:  # noqa
+            messages.success(self.request, 'Your application has been successfully removed.')  # noqa
+            return super(RemoveApplications, self).delete(request, *args, **kwargs)  # noqa
         else:
-            messages.warning(self.request, 'You are not authorized to access this page.')
+            messages.warning(self.request, 'You are not authorized to access this page.')  # noqa
             return HttpResponseForbidden()
