@@ -48,12 +48,12 @@
 
             <a href="{% url 'post_detail' post.slug %}"><img
                     src="https://res.cloudinary.com/dqontmjhf/image/upload/v1682341482/auto-mate-logo_fygxyz.png"
-                    class="card-img-top" alt="Post Featured Image"></a>
+                    class="card-img-top" alt="featured image"></a>
 
             {% else %}
 
             <a href="{% url 'post_detail' post.slug %}"><img src="{{ post.featured_image.url }}"
-                    class="img-fluid" /></a>
+                    class="img-fluid" alt="featured image"></a>
 
             {% endif %}
 
