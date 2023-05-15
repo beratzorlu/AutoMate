@@ -308,6 +308,10 @@ The below elements are available to be experienced by the user across the quiz g
 
 | Feature | Screenshot |
 | --- | --- |
+| Site Logo | ![screenshot](docs/features/site-logo.png) |
+| Favicon | ![screenshot](docs/features/custom-favicon.png) |
+| Default Post Banner | ![screenshot](docs/features/default-post-banner.png) |
+| Custom Login Banner | ![screenshot](docs/features/login-banner-custom.png) |
 | Navigation (Logged in) | ![screenshot](docs/features/sitenav-1.png) |
 | Navigation (Logged Out) | ![screenshot](docs/features/sitenav-2.png) |
 | Sign Up | ![screenshot](docs/features/signup.png) |
@@ -334,10 +338,11 @@ The below elements are available to be experienced by the user across the quiz g
 | Application Summary | ![screenshot](docs/features/apply-summary.png) |
 | Application Guide | ![screenshot](docs/features/apply-info.png) |
 | Application Page (Logged In) | ![screenshot](docs/features/apply-1.png) |
-| Custom 404.html Page | ![screenshot](docs/features/apply-0.png) |
-| Custom 404.html Page | ![screenshot](docs/features/apply-0.png) |
-| Custom 400.html Page | ![screenshot](docs/features/apply-0.png) |
-| Custom 500.html Page | ![screenshot](docs/features/apply-0.png) |
+| Custom 500.html Page | ![screenshot](docs/features/custom-500.png) |
+| Custom 404.html Page | ![screenshot](docs/features/custom-404.png) |
+| Custom 403.html Page | ![screenshot](docs/features/custom-403.png) |
+| Custom 400.html Page | ![screenshot](docs/features/custom-400.png) |
+
 
 
 
