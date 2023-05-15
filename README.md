@@ -307,7 +307,7 @@ The design considerations that impacted the envisioned features were mainly stru
 The below elements are available to be experienced by the user across the quiz game application as a whole.
 
 | Feature | Screenshot |
-| --- | --- | --- |
+| --- | --- |
 | Navigation (Logged in) | ![screenshot](docs/features/sitenav-1.png) |
 | Navigation (Logged Out) | ![screenshot](docs/features/sitenav-2.png) |
 | Sign Up | ![screenshot](docs/features/signup.png) |
@@ -334,7 +334,11 @@ The below elements are available to be experienced by the user across the quiz g
 | Application Summary | ![screenshot](docs/features/apply-summary.png) |
 | Application Guide | ![screenshot](docs/features/apply-info.png) |
 | Application Page (Logged In) | ![screenshot](docs/features/apply-1.png) |
-| Application Page (Logged Out) | ![screenshot](docs/features/apply-0.png) |
+| Custom 404.html Page | ![screenshot](docs/features/apply-0.png) |
+| Custom 404.html Page | ![screenshot](docs/features/apply-0.png) |
+| Custom 400.html Page | ![screenshot](docs/features/apply-0.png) |
+| Custom 500.html Page | ![screenshot](docs/features/apply-0.png) |
+
 
 
 ---
