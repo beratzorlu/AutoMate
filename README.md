@@ -333,15 +333,10 @@ The below elements are available to be experienced by the user across the quiz g
 
 #### User Stories Testing
 
-1. 
+| **Feature**   |  **Screenshot**          | **Actual Result** |
+| ------------- | ------------------------ | ----------------- |
+| Site Navigation #2 | ![screenshot](docs/validation/) |
 
-| **Feature**   | **Action**                    | **Expected Result**          | **Actual Result** |
-| ------------- | ----------------------------- | ---------------------------- | ----------------- |
-|  |  |  |  |
-
-<details><summary>Screenshot</summary>
-<img src="docs/features/welcome-page.png">
-</details>
 
 
 
