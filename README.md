@@ -306,9 +306,35 @@ The design considerations that impacted the envisioned features were mainly stru
 
 The below elements are available to be experienced by the user across the quiz game application as a whole.
 
-#### Welcome Logo
-
-![Welcome Logo]()
+| Feature | Screenshot |
+| --- | --- | --- |
+| Navigation (Logged in) | ![screenshot](docs/features/sitenav-1.png) |
+| Navigation (Logged Out) | ![screenshot](docs/features/sitenav-2.png) |
+| Sign Up | ![screenshot](docs/features/signup.png) |
+| Messages | ![screenshot](docs/features/messages.png) |
+| Logout | ![screenshot](docs/features/logout.png) |
+| Login | ![screenshot](docs/features/login.png) |
+| Footer | ![screenshot](docs/features/footer.png) |
+| Featured Blogs | ![screenshot](docs/features/featured-blogs.png) |
+| Comment Content Editing | ![screenshot](docs/features/edit-comment.png) |
+| Blog Content Editing | ![screenshot](docs/features/edit-blog.png) |
+| Application Content Editing | ![screenshot](docs/features/edit-apply.png) |
+| Post Deletion | ![screenshot](docs/features/delete-post.png) |
+| Comment Deletion | ![screenshot](docs/features/delete-comment.png) |
+| Application Deletion | ![screenshot](docs/features/delete-apply.png) |
+| Comment Form | ![screenshot](docs/features/comment-form.png) |
+| No Comments Placeholder | ![screenshot](docs/features/comment-0.png) |
+| Home Page Carousel | ![screenshot](docs/features/carousel.png) |
+| Blog Sidebar | ![screenshot](docs/features/add-post.png) |
+| Blog Sidebar | ![screenshot](docs/features/blog-sidebar.png) |
+| Blog Posts | ![screenshot](docs/features/blog-posts.png) |
+| Blog Content | ![screenshot](docs/features/blog-content.png) |
+| Blog Buttons | ![screenshot](docs/features/blog-buttons.png) |
+| Blog Banner Image | ![screenshot](docs/features/blog-banner.png) |
+| Application Summary | ![screenshot](docs/features/apply-summary.png) |
+| Application Guide | ![screenshot](docs/features/apply-info.png) |
+| Application Page (Logged In) | ![screenshot](docs/features/apply-1.png) |
+| Application Page (Logged Out) | ![screenshot](docs/features/apply-0.png) |
 
 
 ---
