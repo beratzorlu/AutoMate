@@ -334,6 +334,12 @@ The below elements are available to be experienced by the user across the quiz g
 
 ## Validation
 
+### HTML
+
+| Page | W3C | Screenshot | Result |
+| --- | --- | --- | --- |
+| Home | [W3C]() | ![screenshot]() |  |
+
 ### PYTHON
 
 
