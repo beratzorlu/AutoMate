@@ -650,6 +650,8 @@ DevTools.
 
 | Source | Title | URL |
 | --- | --- | --- |
+| Stack Overflow | delete button | [here](https://stackoverflow.com/questions/68008514/how-i-can-create-a-delete-button-in-django-python) |
+| Stack Overflow | delete button #2 | [here](https://stackoverflow.com/questions/46003056/how-to-make-delete-button-in-django) |
 | Stack Overflow | backport version issue | [here](https://stackoverflow.com/questions/71712258/error-could-not-build-wheels-for-backports-zoneinfo-which-is-required-to-insta) |
 | Stack Overflow | bootstrap header width | [here](https://stackoverflow.com/questions/72279036/why-is-my-boostrap-card-header-not-filling-entire-width-of-the-card) |
 | Stack Overflow | bootstrap grid and aside usage | [here](https://stackoverflow.com/questions/36161615/bootstrap-grid-with-html5-sections-and-aside ) |
@@ -681,6 +683,9 @@ DevTools.
 | Stack Overflow | dispatch - loginrequired | [here](https://stackoverflow.com/questions/71782596/why-loginrequiredmixin-dont-stop-my-dispatch-flow-when-user-is-not-authenticat) |
 | Stack Overflow | delete success message with obj value | [here](https://stackoverflow.com/questions/24822509/success-message-in-deleteview-not-shown) |
 | Stack Overflow | how to add custom error pages | [here](https://stackoverflow.com/questions/17662928/django-creating-a-custom-500-404-error-page) |
+| Stack Overflow | how to use css in django forms | [here](https://stackoverflow.com/questions/5827590/css-styling-in-django-forms) |
+| Stack Overflow | bootstrap card resize | [here](https://stackoverflow.com/questions/65616251/how-to-re-size-my-cards-divs-using-bootstrap) |
+| Stack Overflow | relationship with slug and getabsoluteurl | [here](https://stackoverflow.com/questions/35581956/relationship-between-slug-and-get-absolute-url-what-am-i-doing-wrong) |
 | GitHub | fix crispy forms label issue | [here](https://github.com/django-crispy-forms/django-crispy-forms/issues/248) |
 | Sophyia.me | secret key generate from terminal | [here](https://sophyia.me/the-easist-way-to-create-your-secret-key) |
 | Stack Exchange | username length best practice | [here](https://security.stackexchange.com/questions/18516/usernames-should-their-length-be-limited ) |
@@ -692,6 +697,8 @@ DevTools.
 | Geeks For Geeks | how to use typed choice field | [here](https://www.geeksforgeeks.org/typedchoicefield-django-forms/) |
 | Geeks For Geeks | form filed custom widgets | [here](https://www.geeksforgeeks.org/django-form-field-custom-widgets/) |
 | Codeing Gear | add favicon to django | [here](https://codinggear.blog/django-add-favicon/) |
+| Grepper | add class to form field | [here](https://www.grepper.com/answers/564807/Add+class+to+form+field+Django+ModelForm) |
+| Medium | crispy forms | [here](https://levelup.gitconnected.com/how-to-make-your-django-forms-look-crispy-78a68000bc3f) |
 
 
 ### Documentation
@@ -718,6 +725,7 @@ DevTools.
 | Django | Url dispatcher | [here](https://docs.djangoproject.com/en/3.2/topics/http/urls/ ) |
 | Django | form validation | [here](https://docs.djangoproject.com/en/3.2/ref/forms/validation/ ) |
 | Django | form fields | [here](https://docs.djangoproject.com/en/4.2/ref/forms/fields/ ) |
+| Django | form templates | [here](https://docs.djangoproject.com/en/4.1/topics/forms/#working-with-form-templates) |
 | Django PhoneNumberField | django phonenumberfield docs | [here](https://django-phonenumber-field.readthedocs.io/en/latest/reference.html#validator) |
 | Mozilla | setTimeout | [here](https://developer.mozilla.org/en-US/docs/Web/API/setTimeout) |
 | Bootstrap | methods | [here](https://getbootstrap.com/docs/5.0/components/alerts/#methods) |
@@ -733,8 +741,12 @@ DevTools.
 | --- | --- | --- |
 | YouTube - Web Zone | responsonive grid with bootstrap | [here](https://www.youtube.com/watch?v=ei5-5vcEPz8&t=136s) |
 | YouTube - Codemy| add posts | [here](https://www.youtube.com/watch?v=CnaB4Nb0-R8) |
+| YouTube - Codemy| comment section | [here](https://www.youtube.com/watch?v=hZrlh4qU4eQ) |
+| YouTube - Codemy| delete blog post | [here](https://www.youtube.com/watch?v=8NPOwmtupiI) |
+| YouTube - Codemy| update blog post | [here](https://www.youtube.com/watch?v=J7xaESAddDQ) |
 | YouTube - Coding Entrepreneurs | Ajax likes | [here](https://www.youtube.com/watch?v=pkPRtQf6oQ8) |
 | YouTube - Coding Is Thinking |  delete comments | [here](https://www.youtube.com/watch?v=kuJPMKbN3Yg) |
+| YouTube - Django World |  edit and delete button for blog detail page | [here](https://www.youtube.com/watch?v=wFci3tnRNFw) |
 
 
 ### Articles
