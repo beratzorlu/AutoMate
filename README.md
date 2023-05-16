@@ -527,7 +527,7 @@ You can find a [template](https://github.com/Code-Institute-Org/python-essential
 Gitpod IDE is the development environment for this project.
 
 If you wish to make copy of this repository locally, you can clone it by inputting the following code into your preferred integrated development environment (IDE):
-- `git clone https://github.com/beratzorlu/python-quiz.git`
+- `git clone https://github.com/beratzorlu/AutoMate.git`
 
 As anoher method, you can click below button to create your own workspace using this repository if you are using Gitpod.e
 
