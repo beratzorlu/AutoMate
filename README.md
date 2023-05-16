@@ -20,6 +20,9 @@
     -   [Colour Palette](#colour-palette)
     -   [Wireframes](#wireframes)
 
+-   [Agile Development](#agile-development)
+    -   [MoSCow](#moscow-prioritization-system)
+
 - [Technical Design](#technical-design)
     -   [Flowchart](#flowchart)
     -   [Data Model](#data-model)
@@ -286,6 +289,21 @@ More importantly, this colour combination consists of items designed to motivate
 ![screenshot](docs/wireframes/desktop-detail.png)
 
 </details>
+
+---
+
+## Agile Development
+
+### MoSCoW Prioritization System
+
+This project relies on agile methodology for its task management. This allows for more accurate estimation of time needed for successful task completion. You can access the kanban board used for this project [here](https://github.com/users/beratzorlu/projects/4/views/1)
+
+Below are the labels used on GitHub to illustrate the various importance levels.
+
+- Must Have: MVP feature (60% of user stories)
+- Should Have: secondary importance (20% of user stories)
+- Could Have: Tertiary importance (20% of stories)
+- Won't Have: No longer in consideration
 
 ---
 
