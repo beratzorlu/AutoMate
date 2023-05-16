@@ -1,6 +1,6 @@
 # AutoMate – Portfolio Project 4
 
-![A screenshot of the application in action]()
+![A screenshot of the application in action](docs/repo-responsive.png)
 
 ## [Link to live web application](https://automate-pp4.herokuapp.com/)
 
@@ -8,7 +8,6 @@
 
 ## Project Documentation
 ### Welcome to [AutoMate](https://automate-pp4.herokuapp.com/)
-
 
 ---
 
