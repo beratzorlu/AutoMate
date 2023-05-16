@@ -300,11 +300,11 @@ More importantly, this colour combination consists of items designed to motivate
 
 ## Website Features
 
-The design considerations that impacted the envisioned features were mainly structured around CLI-based considerations. While there were more features planned in the initial stages of the project, some were not entertained to the benefit of serving the needs referenced in the [User Stories](#user-stories) section. Thus, it was important to focus on a minimum viable project rather than prioritizing the implementation of further features for the sake of it. This would only bloat the application without adding much real value to the user experience overall.
+The design considerations that impacted the envisioned features were mainly structured around user interaction and content sharing. While there were more features planned in the initial stages of the project, some were not entertained to the benefit of serving the needs referenced in the [User Stories](#user-stories) section. Thus, it was important to focus on a minimum viable project rather than prioritizing the implementation of further features for the sake of it. This would only bloat the application without adding much real value to the user experience overall. There are [records available](#future-features) as a part of this documentation that demonstrate the change in scope that took place moving further into development.
 
 ### Application Elements
 
-The below elements are available to be experienced by the user across the quiz game application as a whole.
+The below elements are available to be experienced by the user across the application as a whole.
 
 | Feature | Screenshot |
 | --- | --- |
@@ -343,14 +343,37 @@ The below elements are available to be experienced by the user across the quiz g
 | Custom 403.html Page | ![screenshot](docs/features/custom-403.png) |
 | Custom 400.html Page | ![screenshot](docs/features/custom-400.png) |
 
-
-
-
 ---
 
 ## Future Features
 
-#### 
+This section documents the features that were taken out of consideration for the benefit of the completion of the minimum viable project. The central observation in this area is that the level of ambition that the project initially set out with does not match with the intellectual labour required to complete a significant sum of the features first assigned. Below, are user stories that were deemed no longer necessary. You can view the full kanbar board used for project planning [here](https://github.com/users/beratzorlu/projects/4/views/1).
+
+That being said, these features remain relevant to the overall scope of the project and it would see them expand its functional capacity in the future if the situation allowed it.
+
+| Label | Feature |
+| --- | --- |
+| Won't Have | Direct Messaging |
+| Won't Have | Unfollow Users |
+| Won't Have | Admin/Inappropriate Blog Posts#52 |
+| Won't Have | Car Finance Calculator#41 |
+| Won't Have | Car Profile#40 |
+| Won't Have | Comments/Post Card Comment Count#51 |
+| Won't Have | Contact Us/Google Maps and Marker Clusterer#33 |
+| Won't Have | Background Refresh For Post Likes#32 |
+| Won't Have | Authentication/SSO#30 |
+| Won't Have |  Profiles/Private Profiles#28 |
+| Won't Have | Admin/Suspend Users#27 |
+| Won't Have | Direct Messaging/Notifications#26 |
+| Won't Have | Admin/View Reported Posts#24 |
+| Won't Have | Post Report#23 |
+| Won't Have | Follow Users#6 |
+| Won't Have | Notifications/New Follower#22 |
+| Won't Have | Notifications/Post Engagement#21 |
+| Won't Have | Search Users & Posts#20 |
+| Won't Have | Password Reset#9 |
+| Won't Have | Profiles/Create Profile#13 |
+| Won't Have | Profiles/Edit Profile#7 |
 
 ---
 
