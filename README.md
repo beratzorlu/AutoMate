@@ -390,10 +390,6 @@ That being said, these features remain relevant to the overall scope of the proj
 
 ### Manual Testing
 
-| User Story | Screenshot | Result |
-| --- | --- | --- |
-|  |  | Pass |
-
 #### User Stories Testing
 
 | **Feature**   |  **Screenshot**          | **Result** |
@@ -479,7 +475,7 @@ That being said, these features remain relevant to the overall scope of the proj
 
 ## Bug Fixes
 
-In this section, all bugs that cased fatal errors that prevented the successful execution of the application and their relevant fixes are provided.
+In this section, all bugs that cased errors that prevented the successful execution of the application and their relevant fixes are provided.
 
 | **Bug** | **Fix** |
 | ------- | ------- |
