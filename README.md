@@ -687,8 +687,8 @@ sys, sleep, time - Used to create a typing effect in various sections of the app
 
 These article samples were taken from third party resources to prepopulate the website with blogs that present organic content.
 
-- [Jalopnik](https://jalopnik.com/every-car-looks-like-this-thanks-to-a-gigantic-regulato-1849837803)
-- [Car Zone](https://www.carzone.ie/motoring-advice/should-you-buy-a-used-electric-car/2933)
+- [Jalopnik](https://jalopnik.com/every-car-looks-like-this-thanks-to-a-gigantic-regulato-1849837803): Every Car Looks Like This Thanks to a Gigantic Regulatory Loophole
+- [Car Zone](https://www.carzone.ie/motoring-advice/should-you-buy-a-used-electric-car/2933): Should You Buy A Used Electric Car?
 
 
 ### Library Information
