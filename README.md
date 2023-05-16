@@ -483,7 +483,22 @@ In this section, all bugs that cased fatal errors that prevented the successful 
 
 | **Bug** | **Fix** |
 | ------- | ------- |
-| get_username() 'None' Text Display: A bug where a 'None' text appeared during when the system was expecting input from the user for their username. | Fixed by removing the print element nested inside an outer input element. Click [here](https://github.com/beratzorlu/python-quiz/commit/d3fc300dc47d88aecd65f99b7ab7cbb6ca6f13b7) to review the relevant commit. |
+| SyntaxError on STATIC_ROOT variable. | [here](https://github.com/beratzorlu/AutoMate/commit/70e0273a16c29968d5ed463f5bb69cf63e9aba7e). |
+| Alignment issue for like and comment icons. | [here](https://github.com/beratzorlu/python-quiz/commit/d3fc300dc47d88aecd65f99b7ab7cbb6ca6f13b7). |
+| Comment textfield issue.  | [here](https://github.com/beratzorlu/AutoMate/commit/11c99d53f14d9b4e536b8c5522019e194061ab74) |
+| Delete blog button positioning issue.  | [here](https://github.com/beratzorlu/AutoMate/commit/306849d24d314e52ec4e2bd863d3d56942024e76) |
+| Post detail render issue when logged in as admin.  | [here](https://github.com/beratzorlu/AutoMate/commit/0c606ba4cf32c5a625d95201eff7f06da745ee79) |
+| Unresponsive footer. | [here](https://github.com/beratzorlu/AutoMate/commit/e4d1d7a1d1ffe802e82cacfbc4a05d11dc054a30) |
+| Consultation frontend render issue. | [here](https://github.com/beratzorlu/AutoMate/commit/4b531cbddf683782b7168eb66540b3f1bc9e3815) |
+| Consultation form loop render issue. | [here](https://github.com/beratzorlu/AutoMate/commit/c7dbc7f8b35e05e3d286e784872b67a9883f6199) |
+| Card wrap issue. | [here](https://github.com/beratzorlu/AutoMate/commit/162b2bfff80a1ad3b22ee7ec3db0cb2bf798da4c) |
+| Application summary card render issue. | [here](https://github.com/beratzorlu/AutoMate/commit/3b5a304272b4be5ea19373b8770ff78d0a9f56ef) |
+| Edit view frontend content update issue. | [here](https://github.com/beratzorlu/AutoMate/commit/4848f1c68c68774a8ae5dfb947346e9f35a0de50) |
+| cars.py import issue. | [here](https://github.com/beratzorlu/AutoMate/commit/4757863be79691120d3a7a9f841f49b6ebca4b93) |
+| ID text capitalization issue. | [here](https://github.com/beratzorlu/AutoMate/commit/dd9bc150e39562fb02b4859dbd776797e222f288) |
+| Comment security issue. | [here](https://github.com/beratzorlu/AutoMate/commit/23528285f3d115745b90ccd1e67c005294272159) |
+| author_id Null value issue. | [here](https://github.com/beratzorlu/AutoMate/commit/0c0e5e0280444d6805c48daf89c7f92d087b6e3e) |
+| Blog page responsivity issue. | [here](https://github.com/beratzorlu/AutoMate/commit/7b054286b982038cca277428d6955ce95a201ac8) |
 
 ---
 
