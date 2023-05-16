@@ -417,7 +417,6 @@ That being said, these features remain relevant to the overall scope of the proj
 | As an unregistered user I can use a password and username I choose so that I can securely access the user-exclusive features of the website. | ![screenshot](docs/features/signup.png) | Pass |
 | As a user I can click on a clearly labelled button on a blog card so that I am easily directed to the details of the relevant full blog post. | ![screenshot](docs/features/featured-blogs.png) | Pass |
 | As a registered user I can navigate the site so that I can interact with the available features. | ![screenshot](docs/features/sitenav-1.png) | Pass |
-| As an admin I can create, read, update and delete content so that I can manage my blog content. | ![screenshot](docs/features/) |
 | As an admin I can approve or reject comments left by registered users so that I can ensure that the content available on the site follows the community guidelines. | ![screenshot](docs/features/comments-approve.png) | Pass |
 | As an admin I can create draft posts so that I can come back to them when I want to. | ![screenshot](docs/features/post-draft.png) | Pass |
 | As an admin I can create, read, update and delete content so that I can manage my blog content. | ![screenshot](docs/features/admin-content-manage.png) | Pass |
