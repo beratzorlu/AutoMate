@@ -608,6 +608,30 @@ DevTools.
 - Heroku: Cloud platform used for deploying project.
 - Canva: Graphic design platform used for custom visual elements.
 
+### External Modules
+
+| **Name** | **Version** |
+| ------- | ------- |
+| asgiref | 3.6.0 |
+| Babel | 2.12.1 |
+| cloudinary | 1.32.0 |
+| dj-database-url | 0.5.0 |
+| dj3-cloudinary-storage | 0.0.6 |
+| Django | 3.2.18 |
+| django-allauth | 0.54.0 |
+| django-crispy-forms | 1.14.0 |
+| django-phonenumber-field | 7.1.0 |
+| django-summernote | 0.8.20.0 |
+| gunicorn | 20.1.0 |
+| oauthlib | 3.2.2 |
+| phonenumbers | 8.13.11 |
+| psycopg2 | 2.9.6 |
+| PyJWT | 2.6.0 |
+| python3-openid | 3.2.0 |
+| pytz | 2023.3 |
+| requests-oauthlib | 1.3.1 |
+| sqlparse | 0.4.4 |
+
 ---
 
 ## Credits and References
