@@ -339,6 +339,7 @@ The below elements are available to be experienced by the user across the applic
 | Application Summary | ![screenshot](docs/features/apply-summary.png) |
 | Application Guide | ![screenshot](docs/features/apply-info.png) |
 | Application Page (Logged In) | ![screenshot](docs/features/apply-1.png) |
+| Add Application **(DISCLAIMER: The phone field will not accept any random combination of numbers that match the selected area number format. It needs to be a real number because of the security features that come with PhoneNumberField library.)** | ![screenshot](docs/features/add-apply.png) |
 | Custom 500.html Page | ![screenshot](docs/features/custom-500.png) |
 | Custom 404.html Page | ![screenshot](docs/features/custom-404.png) |
 | Custom 403.html Page | ![screenshot](docs/features/custom-403.png) |
