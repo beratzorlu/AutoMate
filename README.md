@@ -399,11 +399,11 @@ That being said, these features remain relevant to the overall scope of the proj
 |  As a user I can browse a website that incorporates overall cohesion among its various elements so that I have an aesthetically pleasing user experience. | ![screenshot](docs/features/carousel.png) | Pass |
 | As a user I can be directed to an error page so that I know something went wrong with the website. | ![screenshot](docs/features/custom-404.png) | Pass (This is valid for all custom error pages.) | 
 | As a user I can view all the newest posts on the website so that I can directly access the most up-to-date content available on the website. | ![screenshot](docs/features/blog-posts.png) | Pass |
-| As a user I can view the consultation page so that I can learn about the various consultation service that the site offers. | ![screenshot](docs/features/apply-1.png) |  |
+| As a user I can view the consultation page so that I can learn about the various consultation service that the site offers. | ![screenshot](docs/features/apply-1.png) | Pass |
 | As a registered I can remove comments that I posted so that they are no longer visible on the site. | ![screenshot](docs/features/delete-comment.png) | Pass |
 | As a registered user I can edit the comments I posted so that I can change the content I originally posted in my comment. | ![screenshot](docs/features/edit-comment.png) | Pass |
 | As a registered user I can create new posts so that I can share my thoughts and opinions on the platform. | ![screenshot](docs/features/add-post.png) | Pass |
-| As a registered user I can use a dedicated form to edit my blog so that I can make changes to my content when I feel there is a need to do so. | ![screenshot](docs/features/edit-blog.png) | Post |
+| As a registered user I can use a dedicated form to edit my blog so that I can make changes to my content when I feel there is a need to do so. | ![screenshot](docs/features/edit-blog.png) | Pass |
 | As a registered user I can delete my posts so that my published content is removed. | ![screenshot](docs/features/delete-post.png) | Pass |
 | As a user I can view the number of comments on any post so that I see if the post is popular or not and decide if it's worth checking out based on this information. | ![screenshot](docs/features/blog-banner.png) | Pass |
 | As a registered user I can view posts from other users so that I can access and read content posted by others. | ![screenshot](docs/features/blog-list-1.png) | Pass |
