@@ -37,6 +37,7 @@
         -   [User Stories Testing](#user-stories-testing)
     -   [Automated Testing](#automated-tests)
         -   [Unit Tests](#unit-tests)
+    -   [Performance](#performance)
 
 -   [Validation](#validation)
     -   [HTML](#html)
@@ -438,6 +439,16 @@ That being said, these features remain relevant to the overall scope of the proj
 | As an admin I can approve or reject comments left by registered users so that I can ensure that the content available on the site follows the community guidelines. | ![screenshot](docs/features/comments-approve.png) | Pass |
 | As an admin I can create draft posts so that I can come back to them when I want to. | ![screenshot](docs/features/post-draft.png) | Pass |
 | As an admin I can create, read, update and delete content so that I can manage my blog content. | ![screenshot](docs/features/admin-content-manage.png) | Pass |
+
+### Performance
+
+The Lighthouse tests returned an overall acceptable result considering the scope and purpose of the project. Most notably, the performance value appears to be more lacking area compared to the rest of the parameters available on Lighthouse. Information gathered from the testing process indicated that these score are a result of Cloudinary slowing down the loading times of the images. In the future project, more effective cloud solutions such AWS will help prevent the recurrance of similar results.
+
+| **Page** | **Screenshot** |
+| -------- | ------ |
+| Home | ![screenshot](docs/features/lighthouse-home.png) |
+| Blog | ![screenshot](docs/features/lighthouse-home.png) |
+| Consultation | ![screenshot](docs/features/lighthouse-consultation.png) |
 
 ---
 
