@@ -390,14 +390,40 @@ That being said, these features remain relevant to the overall scope of the proj
 
 ### Manual Testing
 
+| User Story | Screenshot | Result |
+| --- | --- | --- |
+|  |  | Pass |
+
 #### User Stories Testing
 
-| **Feature**   |  **Screenshot**          | **Actual Result** |
+| **Feature**   |  **Screenshot**          | **Result** |
 | ------------- | ------------------------ | ----------------- |
-| Site Navigation #2 | ![screenshot](docs/validation/) |
-
-
-
+| As an admin I can provide a disclaimer at the bottom of the page so that I can specify that all outsourced content (texts, images etc.) is used for purposes of education as a part of this academic project and is in no circumstance to be used for commercial motivations. | ![screenshot](docs/features/footer.png) | Pass |
+|  As a user I can browse a website that incorporates overall cohesion among its various elements so that I have an aesthetically pleasing user experience. | ![screenshot](docs/features/carousel.png) | Pass |
+| As a user I can be directed to an error page so that I know something went wrong with the website. | ![screenshot](docs/features/custom-404.png) | Pass (This is valid for all custom error pages.) | 
+| As a user I can view all the newest posts on the website so that I can directly access the most up-to-date content available on the website. | ![screenshot](docs/features/blog-posts.png) | Pass |
+| As a user I can view the consultation page so that I can learn about the various consultation service that the site offers. | ![screenshot](docs/features/apply-1.png) |  |
+| As a registered I can remove comments that I posted so that they are no longer visible on the site. | ![screenshot](docs/features/delete-comment.png) | Pass |
+| As a registered user I can edit the comments I posted so that I can change the content I originally posted in my comment. | ![screenshot](docs/features/edit-comment.png) | Pass |
+| As a registered user I can create new posts so that I can share my thoughts and opinions on the platform. | ![screenshot](docs/features/add-post.png) | Pass |
+| As a registered user I can use a dedicated form to edit my blog so that I can make changes to my content when I feel there is a need to do so. | ![screenshot](docs/features/edit-blog.png) | Post |
+| As a registered user I can delete my posts so that my published content is removed. | ![screenshot](docs/features/delete-post.png) | Pass |
+| As a user I can view the number of comments on any post so that I see if the post is popular or not and decide if it's worth checking out based on this information. | ![screenshot](docs/features/blog-banner.png) | Pass |
+| As a registered user I can view posts from other users so that I can access and read content posted by others. | ![screenshot](docs/features/blog-list-1.png) | Pass |
+| As a registered user I can like other people's posts so that I inform them that I had a positive experience with their posts. | ![screenshot](docs/features/blog-banner.png) | Pass |
+| As a user I can see special styling for particular usernames in comments so that I can identify which users are admins. | ![screenshot](docs/features/admin-crown.png) | Pass |
+| As a registered user I can clearly see date/time information on a post so that I learn how old or new the post is to determine its relevance. | ![screenshot](docs/features/blog-banner.png) | Pass |
+| As an unregistered I can sign up to create an account so that I can fully access the features available on the website. | ![screenshot](docs/features/signup.png) | Pass |
+| As a registered I can leave comments on other users' blog posts so that I share my thoughts on the content they have posted. | ![screenshot](docs/features/comment-form.png) | Pass |
+| As a registered user I can log out of my account so that I can securely quit the current session active on my device. | ![screenshot](docs/features/logout.png) | Pass |
+| As a registered user I can log in to my account so that I access the full functionality of the website. | ![screenshot](docs/features/login.png) | Pass |
+| As an unregistered user I can use a password and username I choose so that I can securely access the user-exclusive features of the website. | ![screenshot](docs/features/signup.png) | Pass |
+| As a user I can click on a clearly labelled button on a blog card so that I am easily directed to the details of the relevant full blog post. | ![screenshot](docs/features/featured-blogs.png) | Pass |
+| As a registered user I can navigate the site so that I can interact with the available features. | ![screenshot](docs/features/sitenav-1.png) | Pass |
+| As an admin I can create, read, update and delete content so that I can manage my blog content. | ![screenshot](docs/features/) |  |
+| As an admin I can approve or reject comments left by registered users so that I can ensure that the content available on the site follows the community guidelines. | ![screenshot](docs/features/comments-approve.png) | Pass |
+| As an admin I can create draft posts so that I can come back to them when I want to. | ![screenshot](docs/features/post-draft.png) | Pass |
+| As an admin I can create, read, update and delete content so that I can manage my blog content. | ![screenshot](docs/features/admin-content-manage.png) | Pass |
 
 ---
 
