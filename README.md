@@ -72,7 +72,7 @@
 
 ### Target Audiance
 
-This project targets the general audiance inclusive of all ages. It is tailored towards a base of interest towards Irish youths who have recently acquired their full driving license and are in the market to purchase their first second-hand car.
+This project primarily focuses on Irish youths who have recently acquired their full driving license and are in the market to purchase their first second-hand car.
 
 
 ### User Stories
