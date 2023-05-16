@@ -589,8 +589,12 @@ Alternatively, you can connect to your Github account by following the below ste
 - Microsoft Snipping Tool: Fallback screen capture software when MS Snip & Sketched became unresponsive.
 - DiffChecker: Comparing code to identify issues, solutions and ideas.
 - Python Checker: Checking the syntax of Python code.
-- Patorjk: Generating custom ASCII art.
 - ElephantSQL: PosgresSQL database resource.
+- Django: Fullstack framework used to build the project
+- Bootstrap: Responsive frontend CSS framework used to design the visual aspects of the project.
+- Cloudinary: Cloud storage for static files.
+- Balsamiq: Wireframe design and rendering.
+- Draw.io: Diagram design and rendering.
 
 ### Platforms
 
@@ -600,18 +604,8 @@ Alternatively, you can connect to your Github account by following the below ste
 - CodePen: For quickly testing out ideas before carrying them to 
 DevTools.
 - Coolors: For creating a matching colour palette that has appropriate contrast.
-- Google Cloud: For accessing a library of Google-based API services.
-- Google Drive API: For communicating with a cloud service to upload data.
-- Google Sheets API: For reading and writing automated data to a cloud-hosted spreadsheet file.
-
-### Libraries
-
-#### Local Libraries
-
-os - Used to clear terminal.
-sys, sleep, time - Used to create a typing effect in various sections of the application.
-
-#### Third Party Libraries
+- Heroku: Cloud platform used for deploying project.
+- Canva: Graphic design platform used for custom visual elements.
 
 ---
 
