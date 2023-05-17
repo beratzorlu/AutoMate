@@ -1,6 +1,6 @@
 # AutoMate – Portfolio Project 4
 
-![A screenshot of the application in action](docs/repo-responsive.png)
+![A screenshot of the application in action](docs/responsive.png)
 
 ## [Link to live web application](https://automate-pp4.herokuapp.com/)
 
@@ -809,6 +809,7 @@ I would like to first and foremost thank my mentor, Rohit Sharma, for his dedica
 
 ## Closing Remarks
 
+In closing, the development process in its entirety has doubtless been a highly educative experience. This having been my first time using any kind of full-stack framework to build a web development project, I was introduced to many challenges which at times greatly impeded the development momentum. However, while this may be the case, overcoming the obstacles presented by such issues allowed for understanding how different elements of Django interacted with one another. It is possible to access these learning points through tutorial videos or blog posts. But, my experience shows that one does not truly learn the intricacies of Django until they experience and overcome them themselves. It is possible to argue that this experience isn't unique to the use of Django. The learning points obtained from experiencing and solving problems when using Django provide an opportunity to nurture a development strategy that can translate across many different forms of software development. Thus, if I would take away one key lesson from my experience with this project would be to start from smaller core functionality and slowly expand the project's functional capacity rather than the other way around. If not monitored correctly, the constant addition of tasks and ideas can lead to a long backlog of features that will never become a subject of consideration for the final project.
 
 ---
  [Back to Top](#table-of-contents)
