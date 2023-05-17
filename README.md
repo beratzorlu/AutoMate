@@ -363,6 +363,8 @@ The below elements are available to be experienced by the user across the applic
 | Custom 404.html Page | ![screenshot](docs/features/custom-404.png) |
 | Custom 403.html Page | ![screenshot](docs/features/custom-403.png) |
 | Custom 400.html Page | ![screenshot](docs/features/custom-400.png) |
+| Paginate Forward | ![screenshot](docs/features/paginate-1.png) |
+| Paginate Backward | ![screenshot](docs/features/paginate-2.png) |
 
 ---
 

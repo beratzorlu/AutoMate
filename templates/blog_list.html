@@ -85,13 +85,13 @@
         {% if page_obj.has_previous %}
 
         <li><a href="?page={{ page_obj.previous_page_number }}"
-                class="page-link btn btn-dark border border-danger">PREV</a></li>
+                class="page-link text-dark btn btn-danger border border-danger rounded-0"><i class="fas fa-chevron-left"></i> Previous Page</a></li>
 
         {% endif %}
 
         {% if page_obj.has_next %}
 
-        <li><a href="?page={{ page_obj.next_page_number }}" class="page-link btn btn-danger border border-dark">NEXT</a>
+        <li><a href="?page={{ page_obj.next_page_number }}" class="page-link text-danger btn btn-danger border border-dark rounded-0">Next Page <i class="fas fa-chevron-right"></i></a>
         </li>
 
         {% endif %}
